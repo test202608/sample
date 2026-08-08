@@ -1,14 +1,24 @@
 export const metadata = {
   title: "L Message 改善提案",
-  robots: "noindex, nofollow"
+  description: "L Message 改善提案サイト",
+  robots: {
+    index: false,
+    follow: false,
+    googleBot: {
+      index: false,
+      follow: false,
+    },
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="ja">
-      <body style={{ fontFamily: "sans-serif", padding: "20px" }}>
-        {children}
-      </body>
+      <head>
+        <meta name="robots" content="noindex, nofollow" />
+        <meta name="googlebot" content="noindex, nofollow" />
+      </head>
+      <body>{children}</body>
     </html>
   );
 }
