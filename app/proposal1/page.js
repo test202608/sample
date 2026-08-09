@@ -33,10 +33,12 @@ export default function Proposal1() {
         </p>
 
         <ul style={{ lineHeight: "2.2" }}>
-          <li>① LINE公式アカウント設定（Messaging API 有効化）</li>
-          <li>② Webhook設定（URL貼り付け）</li>
-          <li>③ L Message設定（チャネル情報の入力）</li>
-          <li>④ 接続テスト（成功/失敗の判定）</li>
+          <li>① アカウント有無の確認</li>
+          <li>② ログイン</li>
+          <li>③ LINE公式アカウント設定（Messaging API 有効化）</li>
+          <li>④ Webhook設定（URL貼り付け）</li>
+          <li>⑤ L Message設定（チャネル情報の入力）</li>
+          <li>⑥ 接続テスト（成功/失敗の判定）</li>
         </ul>
 
         <p style={{ marginTop: "20px" }}>
@@ -44,11 +46,11 @@ export default function Proposal1() {
         </p>
       </section>
 
-      {/* 3. 図解（ステップ画面の図解をここに集約） */}
+      {/* 3. 図解（ステップ画面のUI案） */}
       <section style={{ marginBottom: "60px" }}>
         <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>3. 図解（ステップ画面のUI案）</h2>
 
-        {/* ステップ1 */}
+        {/* ステップ1：アカウント有無 */}
         <div style={{
           border: "1px solid #ddd",
           padding: "30px",
@@ -56,10 +58,94 @@ export default function Proposal1() {
           marginBottom: "40px"
         }}>
           <h3 style={{ fontSize: "20px", marginBottom: "10px" }}>
-            ステップ1：LINE公式アカウント設定
+            ステップ1：アカウント有無の確認
           </h3>
 
-          <p>以下のボタンをクリックすると、LINE公式アカウント管理画面が別タブで開きます。</p>
+          <p>LINE公式アカウントをお持ちでない場合は、以下のボタンから作成してください。</p>
+
+          <button style={{
+            background: "#007bff",
+            color: "#fff",
+            padding: "10px 20px",
+            border: "none",
+            borderRadius: "6px",
+            cursor: "pointer",
+            marginTop: "10px"
+          }}>
+            LINE公式アカウントを作成する
+          </button>
+
+          <p style={{ marginTop: "20px" }}>
+            すでにアカウントをお持ちの場合は「次へ」を押してください。
+          </p>
+
+          <button style={{
+            marginTop: "10px",
+            background: "#28a745",
+            color: "#fff",
+            padding: "10px 20px",
+            border: "none",
+            borderRadius: "6px",
+            cursor: "pointer"
+          }}>
+            次へ（ステップ2へ）
+          </button>
+        </div>
+
+        {/* ステップ2：ログイン */}
+        <div style={{
+          border: "1px solid #ddd",
+          padding: "30px",
+          borderRadius: "8px",
+          marginBottom: "40px"
+        }}>
+          <h3 style={{ fontSize: "20px", marginBottom: "10px" }}>
+            ステップ2：ログイン
+          </h3>
+
+          <p>LINE公式アカウント管理画面を開く前に、ログインが必要です。</p>
+
+          <button style={{
+            background: "#007bff",
+            color: "#fff",
+            padding: "10px 20px",
+            border: "none",
+            borderRadius: "6px",
+            cursor: "pointer",
+            marginTop: "10px"
+          }}>
+            LINEログイン画面を開く
+          </button>
+
+          <p style={{ marginTop: "20px" }}>
+            ログイン後、自動的に管理画面へ遷移します。
+          </p>
+
+          <button style={{
+            marginTop: "10px",
+            background: "#28a745",
+            color: "#fff",
+            padding: "10px 20px",
+            border: "none",
+            borderRadius: "6px",
+            cursor: "pointer"
+          }}>
+            次へ（ステップ3へ）
+          </button>
+        </div>
+
+        {/* ステップ3：LINE公式アカウント設定（ログイン状態による分岐） */}
+        <div style={{
+          border: "1px solid #ddd",
+          padding: "30px",
+          borderRadius: "8px",
+          marginBottom: "40px"
+        }}>
+          <h3 style={{ fontSize: "20px", marginBottom: "10px" }}>
+            ステップ3：LINE公式アカウント設定（ログイン状態による分岐）
+          </h3>
+
+          <p>以下のボタンをクリックすると、LINE公式アカウント管理画面が開きます。</p>
 
           <button style={{
             background: "#007bff",
@@ -80,15 +166,17 @@ export default function Proposal1() {
             border: "1px solid #ddd",
             borderRadius: "6px"
           }}>
-            <strong>図解：</strong>
-            <p>Messaging API → 「有効化」ボタンの位置を視覚的に表示</p>
+            <strong>ログインしていない場合：</strong>
+            <p>ログイン画面が表示されます。ログイン後、自動的に管理画面へ遷移します。</p>
+            <p>ログイン後は下記の図の通り「Messaging API」を押してください。</p>
+
             <div style={{
               border: "1px dashed #aaa",
               padding: "20px",
               textAlign: "center",
               marginTop: "10px"
             }}>
-              ★ 有効化ボタン（図）
+              ★ Messaging API 有効化ボタン（図）
             </div>
           </div>
 
@@ -101,11 +189,11 @@ export default function Proposal1() {
             borderRadius: "6px",
             cursor: "pointer"
           }}>
-            次へ（ステップ2へ）
+            次へ（ステップ4へ）
           </button>
         </div>
 
-        {/* ステップ2 */}
+        {/* ステップ4：Webhook設定 */}
         <div style={{
           border: "1px solid #ddd",
           padding: "30px",
@@ -113,7 +201,7 @@ export default function Proposal1() {
           marginBottom: "40px"
         }}>
           <h3 style={{ fontSize: "20px", marginBottom: "10px" }}>
-            ステップ2：Webhook設定
+            ステップ4：Webhook設定
           </h3>
 
           <button style={{
@@ -167,11 +255,11 @@ export default function Proposal1() {
             borderRadius: "6px",
             cursor: "pointer"
           }}>
-            次へ（ステップ3へ）
+            次へ（ステップ5へ）
           </button>
         </div>
 
-        {/* ステップ3 */}
+        {/* ステップ5：L Message設定 */}
         <div style={{
           border: "1px solid #ddd",
           padding: "30px",
@@ -179,7 +267,7 @@ export default function Proposal1() {
           marginBottom: "40px"
         }}>
           <h3 style={{ fontSize: "20px", marginBottom: "10px" }}>
-            ステップ3：L Message設定
+            ステップ5：L Message設定
           </h3>
 
           <p>必須項目は赤枠で表示され、未入力の場合は次へ進めません。</p>
@@ -226,18 +314,18 @@ export default function Proposal1() {
             borderRadius: "6px",
             cursor: "pointer"
           }}>
-            次へ（ステップ4へ）
+            次へ（ステップ6へ）
           </button>
         </div>
 
-        {/* ステップ4 */}
+        {/* ステップ6：接続テスト */}
         <div style={{
           border: "1px solid #ddd",
           padding: "30px",
           borderRadius: "8px"
         }}>
           <h3 style={{ fontSize: "20px", marginBottom: "10px" }}>
-            ステップ4：接続テスト
+            ステップ6：接続テスト
           </h3>
 
           <button style={{
@@ -290,9 +378,11 @@ export default function Proposal1() {
         }}>
 {`ユーザー操作
   ↓
-LINE公式アカウントログイン
+アカウント有無の確認
   ↓
-Messaging API 有効化
+ログイン
+  ↓
+LINE公式アカウント設定
   ↓
 Webhook URL 設定
   ↓
