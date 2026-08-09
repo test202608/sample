@@ -168,9 +168,8 @@ export default function Proposal1() {
       <section style={{ marginBottom: "60px" }}>
         <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>5. 工数</h2>
         <ul>
-          <li>PHP基礎習得：3〜5人日</li>
-          <li>既存コード理解：3〜5人日</li>
-          <li>診断ロジック実装（PHP）：5〜7人日</li>
+          <li>既存コード理解：5〜7人日</li>
+          <li>診断ロジック実装（PHP）：6〜8人日</li>
           <li>UI作成（HTML/CSS/JavaScript）：1〜2人日</li>
           <li>テスト：2〜3人日</li>
         </ul>
