@@ -2,9 +2,17 @@ export default function Home() {
   return (
     <main style={{ padding: "40px", fontFamily: "sans-serif", lineHeight: "1.8" }}>
       
-      <h1 style={{ fontSize: "32px", marginBottom: "20px" }}>
-        L Message 改善提案
-      </h1>
+      {/* タイトル（ロゴ＋テキスト） */}
+      <div style={{ display: "flex", alignItems: "center", marginBottom: "20px" }}>
+        <img 
+          src="/lmessage-logo.png" 
+          alt="L Message ロゴ" 
+          style={{ width: "40px", height: "40px", marginRight: "12px" }}
+        />
+        <h1 style={{ fontSize: "32px", margin: 0 }}>
+          改善提案
+        </h1>
+      </div>
 
       <p style={{ fontSize: "18px", marginBottom: "20px" }}>
         以下に改善案を3点提示します。<br />
