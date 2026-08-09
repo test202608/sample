@@ -28,80 +28,273 @@ export default function Proposal1() {
           設定漏れ・迷い・エラー原因不明を解消します。
         </p>
 
-        <p style={{ marginTop: "20px" }}>
-          ウィザードは以下のステップで構成されます（概要）。
-        </p>
+        {/* ウィザードUI案（エルメ風） */}
+        <div style={{
+          display: "flex",
+          marginTop: "30px",
+          border: "1px solid #ddd",
+          borderRadius: "8px"
+        }}>
+          
+          {/* 左側：ステップ一覧 */}
+          <aside style={{
+            width: "240px",
+            borderRight: "1px solid #ddd",
+            padding: "20px"
+          }}>
+            <h3 style={{ fontSize: "18px", marginBottom: "15px" }}>初期設定ウィザード</h3>
+            <ul style={{ listStyle: "none", padding: 0, lineHeight: "2.2" }}>
+              <li>① LINE公式アカウント設定</li>
+              <li>② Webhook設定</li>
+              <li>③ L Message設定</li>
+              <li>④ 接続テスト</li>
+            </ul>
+          </aside>
 
-        <ul style={{ lineHeight: "2.2" }}>
-          <li>① LINE公式アカウント設定（Messaging API 有効化）</li>
-          <li>② Webhook設定（URL貼り付け）</li>
-          <li>③ L Message設定（チャネル情報の入力）</li>
-          <li>④ 接続テスト（成功/失敗の判定）</li>
-        </ul>
+          {/* 右側：ウィザード画面 */}
+          <section style={{ flex: 1, padding: "30px" }}>
+            
+            {/* ステップ1 */}
+            <h3 style={{ fontSize: "20px", marginBottom: "10px" }}>
+              ステップ1：LINE公式アカウント設定
+            </h3>
+            <div style={{
+              border: "1px solid #ccc",
+              padding: "20px",
+              borderRadius: "8px",
+              background: "#fafafa",
+              marginBottom: "40px"
+            }}>
+              <p>以下のボタンをクリックすると、LINE公式アカウント管理画面が別タブで開きます。</p>
+              <button style={{
+                background: "#007bff",
+                color: "#fff",
+                padding: "10px 20px",
+                border: "none",
+                borderRadius: "6px",
+                cursor: "pointer",
+                marginTop: "10px"
+              }}>
+                LINE公式アカウント管理画面を開く
+              </button>
 
-        <p style={{ marginTop: "20px" }}>
-          ※ここでは「概要のみ」を記載し、詳細UIは後半の別枠にまとめています。
-        </p>
+              <div style={{
+                marginTop: "20px",
+                padding: "15px",
+                background: "#fff",
+                border: "1px solid #ddd",
+                borderRadius: "6px"
+              }}>
+                <strong>図解：</strong>
+                <p>Messaging API → 「有効化」ボタンの位置を視覚的に表示</p>
+                <div style={{
+                  border: "1px dashed #aaa",
+                  padding: "20px",
+                  textAlign: "center",
+                  marginTop: "10px"
+                }}>
+                  ★ 有効化ボタン（図）
+                </div>
+              </div>
+
+              <button style={{
+                marginTop: "20px",
+                background: "#28a745",
+                color: "#fff",
+                padding: "10px 20px",
+                border: "none",
+                borderRadius: "6px",
+                cursor: "pointer"
+              }}>
+                次へ（ステップ2へ）
+              </button>
+            </div>
+
+            {/* ステップ2 */}
+            <h3 style={{ fontSize: "20px", marginBottom: "10px" }}>
+              ステップ2：Webhook設定
+            </h3>
+            <div style={{
+              border: "1px solid #ccc",
+              padding: "20px",
+              borderRadius: "8px",
+              background: "#fafafa",
+              marginBottom: "40px"
+            }}>
+              <button style={{
+                background: "#007bff",
+                color: "#fff",
+                padding: "10px 20px",
+                border: "none",
+                borderRadius: "6px",
+                cursor: "pointer"
+              }}>
+                Webhook URL をコピー
+              </button>
+
+              <button style={{
+                background: "#007bff",
+                color: "#fff",
+                padding: "10px 20px",
+                border: "none",
+                borderRadius: "6px",
+                cursor: "pointer",
+                marginLeft: "10px"
+              }}>
+                LINE Developers を開く
+              </button>
+
+              <div style={{
+                marginTop: "20px",
+                padding: "15px",
+                background: "#fff",
+                border: "1px solid #ddd",
+                borderRadius: "6px"
+              }}>
+                <strong>図解：</strong>
+                <p>Webhook URL の貼り付け位置を視覚的に表示</p>
+                <div style={{
+                  border: "1px dashed #aaa",
+                  padding: "20px",
+                  textAlign: "center",
+                  marginTop: "10px"
+                }}>
+                  ★ Webhook URL 入力欄（図）
+                </div>
+              </div>
+
+              <button style={{
+                marginTop: "20px",
+                background: "#28a745",
+                color: "#fff",
+                padding: "10px 20px",
+                border: "none",
+                borderRadius: "6px",
+                cursor: "pointer"
+              }}>
+                次へ（ステップ3へ）
+              </button>
+            </div>
+
+            {/* ステップ3 */}
+            <h3 style={{ fontSize: "20px", marginBottom: "10px" }}>
+              ステップ3：L Message設定
+            </h3>
+            <div style={{
+              border: "1px solid #ccc",
+              padding: "20px",
+              borderRadius: "8px",
+              background: "#fafafa",
+              marginBottom: "40px"
+            }}>
+              <p>必須項目は赤枠で表示され、未入力の場合は次へ進めません。</p>
+
+              <div style={{ marginTop: "20px" }}>
+                <label>チャネルID（必須）</label>
+                <input style={{
+                  width: "100%",
+                  padding: "10px",
+                  border: "2px solid red",
+                  borderRadius: "6px",
+                  marginTop: "5px"
+                }} />
+              </div>
+
+              <div style={{ marginTop: "20px" }}>
+                <label>チャネルシークレット（必須）</label>
+                <input style={{
+                  width: "100%",
+                  padding: "10px",
+                  border: "2px solid red",
+                  borderRadius: "6px",
+                  marginTop: "5px"
+                }} />
+              </div>
+
+              <div style={{ marginTop: "20px" }}>
+                <label>アクセストークン（必須）</label>
+                <input style={{
+                  width: "100%",
+                  padding: "10px",
+                  border: "2px solid red",
+                  borderRadius: "6px",
+                  marginTop: "5px"
+                }} />
+              </div>
+
+              <button style={{
+                marginTop: "20px",
+                background: "#28a745",
+                color: "#fff",
+                padding: "10px 20px",
+                border: "none",
+                borderRadius: "6px",
+                cursor: "pointer"
+              }}>
+                次へ（ステップ4へ）
+              </button>
+            </div>
+
+            {/* ステップ4 */}
+            <h3 style={{ fontSize: "20px", marginBottom: "10px" }}>
+              ステップ4：接続テスト
+            </h3>
+            <div style={{
+              border: "1px solid #ccc",
+              padding: "20px",
+              borderRadius: "8px",
+              background: "#fafafa"
+            }}>
+              <button style={{
+                background: "#007bff",
+                color: "#fff",
+                padding: "10px 20px",
+                border: "none",
+                borderRadius: "6px",
+                cursor: "pointer"
+              }}>
+                テスト送信
+              </button>
+
+              <div style={{
+                marginTop: "20px",
+                padding: "15px",
+                background: "#fff",
+                border: "1px solid #ddd",
+                borderRadius: "6px"
+              }}>
+                <strong>結果表示：</strong>
+                <p>成功 → 緑色で「接続成功」</p>
+                <p>失敗 → 原因を分類して赤枠で表示</p>
+              </div>
+
+              <button style={{
+                marginTop: "20px",
+                background: "#6c757d",
+                color: "#fff",
+                padding: "10px 20px",
+                border: "none",
+                borderRadius: "6px",
+                cursor: "pointer"
+              }}>
+                完了
+              </button>
+            </div>
+
+          </section>
+        </div>
       </section>
 
-      {/* 3. 図解（タイムライン形式のUI案） */}
+      {/* 3. 図解（タイムライン形式） */}
       <section style={{ marginBottom: "60px" }}>
         <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>3. 図解（タイムライン形式のUI案）</h2>
-
         <p>初期設定導線をタイムライン形式で視覚化し、Before/After を明確に示します。</p>
-
-        <pre style={{
-          background: "#f7f7f7",
-          padding: "20px",
-          borderRadius: "8px",
-          border: "1px solid #ddd",
-          fontSize: "14px",
-          marginTop: "20px"
-        }}>
-{`[Before]
-LINE公式アカウント
-    ↑↓
-LINE Developers
-    ↑↓
-L Message
-（3サービスを往復する導線）
-
-[After]
-ウィザード画面
-  ├ 前置き：アカウント有無確認
-  ├ ステップ1：LINE公式設定
-  ├ ステップ2：Webhook設定
-  ├ ステップ3：L Message設定
-  └ ステップ4：接続テスト
-`}
-        </pre>
       </section>
 
       {/* 4. フローチャート */}
       <section style={{ marginBottom: "60px" }}>
         <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>4. フローチャート（配信条件の分岐）</h2>
-        <pre style={{
-          background: "#f7f7f7",
-          padding: "20px",
-          borderRadius: "8px",
-          border: "1px solid #ddd",
-          fontSize: "14px"
-        }}>
-{`ユーザー操作
-  ↓
-LINE公式アカウントログイン
-  ↓
-Messaging API 有効化
-  ↓
-Webhook URL 設定
-  ↓
-L Message 側の設定
-  ↓
-接続テスト
-  ↓
-成功 / 失敗（再設定）
-`}
-        </pre>
+        <p>初期設定の分岐、エラー時の分岐、成功時の流れを図で示します。</p>
       </section>
 
       {/* 5. 工数 */}
@@ -142,240 +335,6 @@ L Message 側の設定
           <li>必須項目チェック</li>
           <li>UIの操作性</li>
         </ul>
-      </section>
-
-      {/* ◆ 初期設定ウィザード（詳細UI） */}
-      <section style={{ marginBottom: "60px" }}>
-        <h2 style={{ fontSize: "24px", marginBottom: "20px" }}>◆ 初期設定ウィザード（詳細UI）</h2>
-
-        {/* ステップ1 */}
-        <div style={{
-          border: "1px solid #ddd",
-          padding: "30px",
-          borderRadius: "8px",
-          marginBottom: "40px"
-        }}>
-          <h3 style={{ fontSize: "20px", marginBottom: "10px" }}>
-            ステップ1：LINE公式アカウント設定
-          </h3>
-
-          <p>以下のボタンをクリックすると、LINE公式アカウント管理画面が別タブで開きます。</p>
-
-          <button style={{
-            background: "#007bff",
-            color: "#fff",
-            padding: "10px 20px",
-            border: "none",
-            borderRadius: "6px",
-            cursor: "pointer",
-            marginTop: "10px"
-          }}>
-            LINE公式アカウント管理画面を開く
-          </button>
-
-          <div style={{
-            marginTop: "20px",
-            padding: "15px",
-            background: "#fff",
-            border: "1px solid #ddd",
-            borderRadius: "6px"
-          }}>
-            <strong>図解：</strong>
-            <p>Messaging API → 「有効化」ボタンの位置を視覚的に表示</p>
-            <div style={{
-              border: "1px dashed #aaa",
-              padding: "20px",
-              textAlign: "center",
-              marginTop: "10px"
-            }}>
-              ★ 有効化ボタン（図）
-            </div>
-          </div>
-
-          <button style={{
-            marginTop: "20px",
-            background: "#28a745",
-            color: "#fff",
-            padding: "10px 20px",
-            border: "none",
-            borderRadius: "6px",
-            cursor: "pointer"
-          }}>
-            次へ（ステップ2へ）
-          </button>
-        </div>
-
-        {/* ステップ2 */}
-        <div style={{
-          border: "1px solid #ddd",
-          padding: "30px",
-          borderRadius: "8px",
-          marginBottom: "40px"
-        }}>
-          <h3 style={{ fontSize: "20px", marginBottom: "10px" }}>
-            ステップ2：Webhook設定
-          </h3>
-
-          <button style={{
-            background: "#007bff",
-            color: "#fff",
-            padding: "10px 20px",
-            border: "none",
-            borderRadius: "6px",
-            cursor: "pointer"
-          }}>
-            Webhook URL をコピー
-          </button>
-
-          <button style={{
-            background: "#007bff",
-            color: "#fff",
-            padding: "10px 20px",
-            border: "none",
-            borderRadius: "6px",
-            cursor: "pointer",
-            marginLeft: "10px"
-          }}>
-            LINE Developers を開く
-          </button>
-
-          <div style={{
-            marginTop: "20px",
-            padding: "15px",
-            background: "#fff",
-            border: "1px solid #ddd",
-            borderRadius: "6px"
-          }}>
-            <strong>図解：</strong>
-            <p>Webhook URL の貼り付け位置を視覚的に表示</p>
-            <div style={{
-              border: "1px dashed #aaa",
-              padding: "20px",
-              textAlign: "center",
-              marginTop: "10px"
-            }}>
-              ★ Webhook URL 入力欄（図）
-            </div>
-          </div>
-
-          <button style={{
-            marginTop: "20px",
-            background: "#28a745",
-            color: "#fff",
-            padding: "10px 20px",
-            border: "none",
-            borderRadius: "6px",
-            cursor: "pointer"
-          }}>
-            次へ（ステップ3へ）
-          </button>
-        </div>
-
-        {/* ステップ3 */}
-        <div style={{
-          border: "1px solid #ddd",
-          padding: "30px",
-          borderRadius: "8px",
-          marginBottom: "40px"
-        }}>
-          <h3 style={{ fontSize: "20px", marginBottom: "10px" }}>
-            ステップ3：L Message設定
-          </h3>
-
-          <p>必須項目は赤枠で表示され、未入力の場合は次へ進めません。</p>
-
-          <div style={{ marginTop: "20px" }}>
-            <label>チャネルID（必須）</label>
-            <input style={{
-              width: "100%",
-              padding: "10px",
-              border: "2px solid red",
-              borderRadius: "6px",
-              marginTop: "5px"
-            }} />
-          </div>
-
-          <div style={{ marginTop: "20px" }}>
-            <label>チャネルシークレット（必須）</label>
-            <input style={{
-              width: "100%",
-              padding: "10px",
-              border: "2px solid red",
-              borderRadius: "6px",
-              marginTop: "5px"
-            }} />
-          </div>
-
-          <div style={{ marginTop: "20px" }}>
-            <label>アクセストークン（必須）</label>
-            <input style={{
-              width: "100%",
-              padding: "10px",
-              border: "2px solid red",
-              borderRadius: "6px",
-              marginTop: "5px"
-            }} />
-          </div>
-
-          <button style={{
-            marginTop: "20px",
-            background: "#28a745",
-            color: "#fff",
-            padding: "10px 20px",
-            border: "none",
-            borderRadius: "6px",
-            cursor: "pointer"
-          }}>
-            次へ（ステップ4へ）
-          </button>
-        </div>
-
-        {/* ステップ4 */}
-        <div style={{
-          border: "1px solid #ddd",
-          padding: "30px",
-          borderRadius: "8px"
-        }}>
-          <h3 style={{ fontSize: "20px", marginBottom: "10px" }}>
-            ステップ4：接続テスト
-          </h3>
-
-          <button style={{
-            background: "#007bff",
-            color: "#fff",
-            padding: "10px 20px",
-            border: "none",
-            borderRadius: "6px",
-            cursor: "pointer"
-          }}>
-            テスト送信
-          </button>
-
-          <div style={{
-            marginTop: "20px",
-            padding: "15px",
-            background: "#fff",
-            border: "1px solid #ddd",
-            borderRadius: "6px"
-          }}>
-            <strong>結果表示：</strong>
-            <p>成功 → 緑色で「接続成功」</p>
-            <p>失敗 → 原因を分類して赤枠で表示</p>
-          </div>
-
-          <button style={{
-            marginTop: "20px",
-            background: "#6c757d",
-            color: "#fff",
-            padding: "10px 20px",
-            border: "none",
-            borderRadius: "6px",
-            cursor: "pointer"
-          }}>
-            完了
-          </button>
-        </div>
-
       </section>
 
     </main>
