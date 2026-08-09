@@ -1,147 +1,270 @@
 export default function Proposal1() {
   return (
-    <main style={{ padding: "40px", lineHeight: "1.8" }}>
-      <h1>改善案①：初期設定導線の一貫性と分かりやすさの改善</h1>
-
-      {/* 1. 具体的な課題点 */}
-      <section>
-        <h2>1. 具体的な課題点</h2>
-        <ul>
-          <li>初期設定の導線が複数の画面に分散しており、迷いやすい。</li>
-          <li>LINE公式アカウントの設定と L Message 側の設定が混在し、非エンジニアは理解しづらい。</li>
-          <li>設定項目が多く、どれが必須でどれが任意なのか判断しづらい。</li>
-          <li>設定漏れが発生すると、後工程でエラーが起きるが、原因が分かりにくい。</li>
+    <main style={{ display: "flex", padding: "40px", fontFamily: "sans-serif" }}>
+      
+      {/* 左側：ステップ一覧（エルメ風） */}
+      <aside style={{
+        width: "240px",
+        borderRight: "1px solid #ddd",
+        paddingRight: "20px"
+      }}>
+        <h2 style={{ fontSize: "20px", marginBottom: "20px" }}>初期設定ウィザード</h2>
+        <ul style={{ listStyle: "none", padding: 0, lineHeight: "2.2" }}>
+          <li>① LINE公式アカウント設定</li>
+          <li>② Webhook設定</li>
+          <li>③ L Message設定</li>
+          <li>④ 接続テスト</li>
         </ul>
-      </section>
+      </aside>
 
-      {/* 2. 改善内容 */}
-      <section>
-        <h2>2. 改善内容（UI案・機能案・補足）</h2>
-        <p>
-          初期設定を「ステップ形式」に再構成し、ユーザーが迷わず設定できるようにします。
-          また、LINE公式アカウントの設定と L Message 側の設定を明確に区分し、
-          非エンジニアでも理解できるよう補足説明を追加します。
+      {/* 右側：ウィザード画面 */}
+      <section style={{ flex: 1, paddingLeft: "40px" }}>
+        
+        <h1 style={{ fontSize: "26px", marginBottom: "20px" }}>
+          改善案①：初期設定導線の改善（ウィザード化）
+        </h1>
+
+        <p style={{ marginBottom: "30px", lineHeight: "1.8" }}>
+          現状の初期設定は、LINE公式アカウント・LINE Developers・L Message の
+          3つのサービスを行き来する必要があり、設定漏れや迷いが発生します。
+          <br />
+          改善案①では、これらの操作を「ウィザード形式」でガイドし、
+          説明と操作を同じ画面内に統合することで、迷いをゼロにします。
         </p>
-        <p>
-          専門用語（Webhook、チャネルアクセストークンなど）には、
-          「これは何か」「なぜ必要か」を併記し、理解負荷を軽減します。
-        </p>
-      </section>
 
-      {/* 3. 図解 */}
-      <section>
-        <h2>3. 図解（初期設定の理想的な導線）</h2>
-        <pre style={{ background: "#f5f5f5", padding: "20px" }}>
-{`
-[ステップ1：LINE公式アカウント設定]
-    ├─ チャネル作成
-    ├─ Messaging API 有効化
-    └─ Webhook URL 登録
+        {/* ステップ1 */}
+        <div style={{ marginBottom: "50px" }}>
+          <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>ステップ1：LINE公式アカウント設定</h2>
 
-        ↓
+          <div style={{
+            border: "1px solid #ccc",
+            padding: "20px",
+            borderRadius: "8px",
+            background: "#fafafa"
+          }}>
+            <p>以下のボタンをクリックすると、LINE公式アカウント管理画面が別タブで開きます。</p>
 
-[ステップ2：L Message 側の設定]
-    ├─ チャネルID入力
-    ├─ チャネルシークレット入力
-    └─ アクセストークン入力
+            <button style={{
+              background: "#007bff",
+              color: "#fff",
+              padding: "10px 20px",
+              border: "none",
+              borderRadius: "6px",
+              cursor: "pointer",
+              marginTop: "10px"
+            }}>
+              LINE公式アカウント管理画面を開く
+            </button>
 
-        ↓
+            <div style={{
+              marginTop: "20px",
+              padding: "15px",
+              background: "#fff",
+              border: "1px solid #ddd",
+              borderRadius: "6px"
+            }}>
+              <strong>図解：</strong>
+              <p>Messaging API → 「有効化」ボタンの位置を視覚的に表示</p>
+              <div style={{
+                border: "1px dashed #aaa",
+                padding: "20px",
+                textAlign: "center",
+                marginTop: "10px"
+              }}>
+                ★ 有効化ボタン（図）
+              </div>
+            </div>
 
-[ステップ3：動作確認]
-    ├─ テスト送信
-    └─ ステータスチェック
-`}
-        </pre>
-      </section>
+            <p style={{ marginTop: "20px" }}>
+              チャネル作成の入力項目も図で示されます。
+            </p>
 
-      {/* 4. フローチャート */}
-      <section>
-        <h2>4. フローチャート（設定漏れの検知）</h2>
-        <pre style={{ background: "#f5f5f5", padding: "20px" }}>
-{`
-[ユーザーが設定を保存]
-        │
-        ▼
-[必須項目が入力済みか？]
-        ├─ YES → [次のステップへ]
-        └─ NO  → [不足項目を赤枠で表示]
-`}
-        </pre>
-      </section>
+            <button style={{
+              marginTop: "20px",
+              background: "#28a745",
+              color: "#fff",
+              padding: "10px 20px",
+              border: "none",
+              borderRadius: "6px",
+              cursor: "pointer"
+            }}>
+              次へ（ステップ2へ）
+            </button>
+          </div>
+        </div>
 
-      {/* 5. 工数 */}
-      <section>
-        <h2>5. 工数（根拠付き）</h2>
-        <table border="1" cellPadding="8">
-          <thead>
-            <tr>
-              <th>作業内容</th>
-              <th>工数</th>
-              <th>根拠</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>要件整理</td>
-              <td>1人日</td>
-              <td>既存導線の分析＋改善案の仕様化</td>
-            </tr>
-            <tr>
-              <td>UI設計</td>
-              <td>2人日</td>
-              <td>ステップ形式の画面構成＋説明文＋図解作成</td>
-            </tr>
-            <tr>
-              <td>機能設計</td>
-              <td>1人日</td>
-              <td>必須項目チェック機能の仕様化</td>
-            </tr>
-            <tr>
-              <td>簡易テスト</td>
-              <td>0.5人日</td>
-              <td>設定漏れ検知の動作確認</td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
+        {/* ステップ2 */}
+        <div style={{ marginBottom: "50px" }}>
+          <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>ステップ2：Webhook設定</h2>
 
-      {/* 6. 実現可能性 */}
-      <section>
-        <h2>6. 実現可能性（技術・リソース）</h2>
-        <ul>
-          <li>既存の設定画面をステップ形式に再構成するだけなので技術的に可能。</li>
-          <li>LINE公式アカウント API の仕様変更は不要。</li>
-          <li>UI改善が中心で、バックエンドの大規模改修は不要。</li>
-        </ul>
-      </section>
+          <div style={{
+            border: "1px solid #ccc",
+            padding: "20px",
+            borderRadius: "8px",
+            background: "#fafafa"
+          }}>
+            <button style={{
+              background: "#007bff",
+              color: "#fff",
+              padding: "10px 20px",
+              border: "none",
+              borderRadius: "6px",
+              cursor: "pointer"
+            }}>
+              Webhook URL をコピー
+            </button>
 
-      {/* 7. 既存機能との整合性 */}
-      <section>
-        <h2>7. 既存機能との整合性</h2>
-        <p>
-          現行の設定項目をそのまま利用しつつ、導線を整理するだけなので、
-          既存ユーザーの設定が壊れることはありません。
-        </p>
-      </section>
+            <button style={{
+              background: "#007bff",
+              color: "#fff",
+              padding: "10px 20px",
+              border: "none",
+              borderRadius: "6px",
+              cursor: "pointer",
+              marginLeft: "10px"
+            }}>
+              LINE Developers を開く
+            </button>
 
-      {/* 8. 優先順位 */}
-      <section>
-        <h2>8. 優先順位</h2>
-        <p>
-          初期設定は全ユーザーが必ず通る導線であり、
-          ここが改善されることで設定漏れ・問い合わせが大幅に減少します。
-          そのため優先度は高いと判断します。
-        </p>
-      </section>
+            <div style={{
+              marginTop: "20px",
+              padding: "15px",
+              background: "#fff",
+              border: "1px solid #ddd",
+              borderRadius: "6px"
+            }}>
+              <strong>図解：</strong>
+              <p>Webhook URL の貼り付け位置を視覚的に表示</p>
+              <div style={{
+                border: "1px dashed #aaa",
+                padding: "20px",
+                textAlign: "center",
+                marginTop: "10px"
+              }}>
+                ★ Webhook URL 入力欄（図）
+              </div>
+            </div>
 
-      {/* 9. 確認事項 */}
-      <section>
-        <h2>9. 実装時の確認事項</h2>
-        <ul>
-          <li>LINE公式アカウント API の仕様変更がないか</li>
-          <li>既存ユーザーの設定が破壊されないか</li>
-          <li>ステップ形式に変更しても操作負荷が増えないか</li>
-        </ul>
+            <button style={{
+              marginTop: "20px",
+              background: "#28a745",
+              color: "#fff",
+              padding: "10px 20px",
+              border: "none",
+              borderRadius: "6px",
+              cursor: "pointer"
+            }}>
+              次へ（ステップ3へ）
+            </button>
+          </div>
+        </div>
+
+        {/* ステップ3 */}
+        <div style={{ marginBottom: "50px" }}>
+          <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>ステップ3：L Message設定</h2>
+
+          <div style={{
+            border: "1px solid #ccc",
+            padding: "20px",
+            borderRadius: "8px",
+            background: "#fafafa"
+          }}>
+            <p>必須項目は赤枠で表示され、未入力の場合は次へ進めません。</p>
+
+            <div style={{ marginTop: "20px" }}>
+              <label>チャネルID（必須）</label>
+              <input style={{
+                width: "100%",
+                padding: "10px",
+                border: "2px solid red",
+                borderRadius: "6px",
+                marginTop: "5px"
+              }} />
+            </div>
+
+            <div style={{ marginTop: "20px" }}>
+              <label>チャネルシークレット（必須）</label>
+              <input style={{
+                width: "100%",
+                padding: "10px",
+                border: "2px solid red",
+                borderRadius: "6px",
+                marginTop: "5px"
+              }} />
+            </div>
+
+            <div style={{ marginTop: "20px" }}>
+              <label>アクセストークン（必須）</label>
+              <input style={{
+                width: "100%",
+                padding: "10px",
+                border: "2px solid red",
+                borderRadius: "6px",
+                marginTop: "5px"
+              }} />
+            </div>
+
+            <button style={{
+              marginTop: "20px",
+              background: "#28a745",
+              color: "#fff",
+              padding: "10px 20px",
+              border: "none",
+              borderRadius: "6px",
+              cursor: "pointer"
+            }}>
+              次へ（ステップ4へ）
+            </button>
+          </div>
+        </div>
+
+        {/* ステップ4 */}
+        <div style={{ marginBottom: "50px" }}>
+          <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>ステップ4：接続テスト</h2>
+
+          <div style={{
+            border: "1px solid #ccc",
+            padding: "20px",
+            borderRadius: "8px",
+            background: "#fafafa"
+          }}>
+            <button style={{
+              background: "#007bff",
+              color: "#fff",
+              padding: "10px 20px",
+              border: "none",
+              borderRadius: "6px",
+              cursor: "pointer"
+            }}>
+              テスト送信
+            </button>
+
+            <div style={{
+              marginTop: "20px",
+              padding: "15px",
+              background: "#fff",
+              border: "1px solid #ddd",
+              borderRadius: "6px"
+            }}>
+              <strong>結果表示：</strong>
+              <p>成功 → 緑色で「接続成功」</p>
+              <p>失敗 → 原因を分類して赤枠で表示</p>
+            </div>
+
+            <button style={{
+              marginTop: "20px",
+              background: "#6c757d",
+              color: "#fff",
+              padding: "10px 20px",
+              border: "none",
+              borderRadius: "6px",
+              cursor: "pointer"
+            }}>
+              完了
+            </button>
+          </div>
+        </div>
+
       </section>
     </main>
   );
