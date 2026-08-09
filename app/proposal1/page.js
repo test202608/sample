@@ -6,7 +6,7 @@ export default function Proposal1() {
         改善案①：LINE連携・内部設定の自動診断（ヘルスチェック）機能の追加
       </h1>
 
-      {/* 1. 課題点（カテゴリ保持） */}
+      {/* 1. 具体的な課題点 */}
       <section style={{ marginBottom: "60px" }}>
         <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>1. 具体的な課題点</h2>
         <ul>
@@ -19,14 +19,14 @@ export default function Proposal1() {
 
       {/* 2. 改善内容 */}
       <section style={{ marginBottom: "60px" }}>
-        <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>2. 改善内容（自動診断機能）</h2>
+        <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>2. 改善内容</h2>
         <p>
           LINE連携・Webhook・Messaging API・内部設定を自動診断し、
           問題箇所を画面上に表示する機能を追加します。
         </p>
       </section>
 
-      {/* 3. 図解（画面イメージ） */}
+      {/* 3. 図解 */}
       <section style={{ marginBottom: "60px" }}>
         <h2 style={{ fontSize: "22px", marginBottom: "20px" }}>3. 図解</h2>
 
@@ -115,10 +115,10 @@ export default function Proposal1() {
                 <h4 style={{ fontSize: "16px", marginBottom: "15px" }}>診断結果</h4>
 
                 <div style={{ lineHeight: "2" }}>
-                  <div style={{ color: "green" }}>✔ Webhookは正常に応答しています</div>
-                  <div style={{ color: "green" }}>✔ LINEとの連携設定は問題ありません</div>
-                  <div style={{ color: "green" }}>✔ アクセストークンは有効です</div>
-                  <div style={{ color: "red" }}>✖ 自動応答がOFFになっています（ONにしてください）</div>
+                  <div style={{ color: "green" }}>✔ LINEとの接続は正常です</div>
+                  <div style={{ color: "green" }}>✔ LINE公式アカウントとの連携設定は問題ありません</div>
+                  <div style={{ color: "green" }}>✔ 必要な認証情報は正しく登録されています</div>
+                  <div style={{ color: "red" }}>✖ 自動応答がOFFになっています（ONに設定してください）</div>
                 </div>
               </div>
 
@@ -152,7 +152,7 @@ Messaging APIチェック
         </pre>
       </section>
 
-      {/* 5. 工数（合計復元） */}
+      {/* 5. 工数 */}
       <section style={{ marginBottom: "60px" }}>
         <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>5. 工数</h2>
         <ul>
@@ -160,28 +160,30 @@ Messaging APIチェック
           <li>UI作成：2人日</li>
           <li>テスト：2人日</li>
         </ul>
-
         <p style={{ marginTop: "10px", fontWeight: "bold" }}>
           ■ 合計：7〜8人日
         </p>
       </section>
 
-      {/* 6〜9（省略なし） */}
+      {/* 6. 実現可能性 */}
       <section style={{ marginBottom: "60px" }}>
         <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>6. 実現可能性</h2>
         <p>既存APIと内部設定情報を利用するため、技術的に実現可能です。</p>
       </section>
 
+      {/* 7. 既存機能との整合性 */}
       <section style={{ marginBottom: "60px" }}>
         <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>7. 既存機能との整合性</h2>
         <p>初期設定ウィザードの“設定後の弱点”を補完する機能であり、整合性が高いです。</p>
       </section>
 
+      {/* 8. 優先順位 */}
       <section style={{ marginBottom: "60px" }}>
         <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>8. 優先順位</h2>
         <p>問い合わせ削減効果が大きく、優先度は高いです。</p>
       </section>
 
+      {/* 9. 実装時の確認事項 */}
       <section style={{ marginBottom: "60px" }}>
         <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>9. 実装時の確認事項</h2>
         <ul>
