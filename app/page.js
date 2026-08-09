@@ -5,8 +5,8 @@ export default function Home() {
       {/* タイトル（ロゴ＋テキスト） */}
       <div style={{ display: "flex", alignItems: "center", marginBottom: "20px" }}>
         <img 
-          src="/lmessage-logo.png" 
-          alt="L Message ロゴ" 
+          src="/logo-lme.png"
+          alt="L Message ロゴ"
           style={{ width: "40px", height: "40px", marginRight: "12px" }}
         />
         <h1 style={{ fontSize: "32px", margin: 0 }}>
