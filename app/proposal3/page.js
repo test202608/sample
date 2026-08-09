@@ -1,7 +1,14 @@
 export default function Proposal3() {
   return (
     <main style={{ padding: "40px", fontFamily: "sans-serif", lineHeight: "1.8" }}>
-      
+
+      {/* 上部：トップページに戻る */}
+      <div style={{ marginBottom: "20px" }}>
+        <a href="/" style={{ color: "#0066cc", fontSize: "18px" }}>
+          ← トップページに戻る
+        </a>
+      </div>
+
       <h1 style={{ fontSize: "28px", marginBottom: "30px" }}>
         改善案③：リッチメニュー操作性の最適化（ユーザー導線改善）
       </h1>
@@ -136,7 +143,7 @@ export default function Proposal3() {
         </pre>
       </section>
 
-      {/* 5. 工数（改善③の実態に合わせて再計算済み） */}
+      {/* 5. 工数 */}
       <section style={{ marginBottom: "60px" }}>
         <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>5. 工数</h2>
         <ul>
@@ -181,6 +188,13 @@ export default function Proposal3() {
           <li>内部設定の正確な取得</li>
         </ul>
       </section>
+
+      {/* 下部：トップページに戻る */}
+      <div style={{ marginTop: "40px" }}>
+        <a href="/" style={{ color: "#0066cc", fontSize: "18px" }}>
+          ← トップページに戻る
+        </a>
+      </div>
 
     </main>
   );
