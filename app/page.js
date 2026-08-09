@@ -7,7 +7,7 @@ export default function Home() {
         <img 
           src="/logo-lme.png"
           alt="L Message ロゴ"
-          style={{ width: "40px", height: "40px", marginRight: "12px" }}
+          style={{ height: "40px", width: "auto", marginRight: "12px" }}
         />
         <h1 style={{ fontSize: "32px", margin: 0 }}>
           改善提案
