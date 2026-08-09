@@ -3,17 +3,17 @@ export default function Proposal2() {
     <main style={{ padding: "40px", fontFamily: "sans-serif", lineHeight: "1.8" }}>
 
       <h1 style={{ fontSize: "28px", marginBottom: "30px" }}>
-        改善案②：ステップ配信の視認性向上と設定ミス防止
+        改善案②：テスト送信機能の明確化とエラー原因の可視化
       </h1>
 
       {/* 1. 具体的な課題点 */}
       <section style={{ marginBottom: "60px" }}>
         <h2>1. 具体的な課題点</h2>
         <ul>
-          <li>ステップ配信の全体構造が一目で把握しづらい（UI/UX）</li>
-          <li>配信条件が複数画面に分散し、理解しづらい（UI/UX）</li>
-          <li>どのステップがどの条件で送られるか分かりにくい（機能面）</li>
-          <li>設定ミスが起きても原因が特定しづらい（機能面）</li>
+          <li>テスト送信が失敗した際、原因が分かりづらい（UI/UX）</li>
+          <li>LINE公式アカウント側か L Message 側か、どちらの設定ミスか判別しづらい（機能面）</li>
+          <li>Webhook の疎通確認がどこで行われているか分かりにくい（UI/UX）</li>
+          <li>非エンジニアにとって「何を直せば良いか」が理解しづらい（UI/UX）</li>
         </ul>
       </section>
 
@@ -21,9 +21,10 @@ export default function Proposal2() {
       <section style={{ marginBottom: "60px" }}>
         <h2>2. 改善内容</h2>
         <p>
-          ステップ配信を「タイムライン形式」で視覚化し、配信順序・条件・分岐を
-          一画面で把握できるようにします。条件設定は一つのモーダルに統合し、
-          設定漏れを防ぐチェック機能を追加します。
+          テスト送信結果を「成功／失敗」だけでなく、失敗時の原因をカテゴリ別に表示します。
+          また、LINE公式アカウント側の設定（Webhook・アクセストークン）と、
+          L Message 側の設定（チャネルID・シークレット）を一画面で確認できる
+          「診断モード」を追加します。
         </p>
       </section>
 
@@ -51,13 +52,13 @@ export default function Proposal2() {
             }}>
               <h3 style={{ fontSize: "16px", marginBottom: "15px" }}>メニュー</h3>
               <ul style={{ listStyle: "none", paddingLeft: "0", lineHeight: "2" }}>
-                <li>・ステップ一覧</li>
-                <li>・条件設定</li>
-                <li>・配信履歴</li>
+                <li>・テスト送信</li>
+                <li>・診断モード</li>
+                <li>・設定確認</li>
               </ul>
             </div>
 
-            {/* 右側：タイムラインUI */}
+            {/* 診断モード UI */}
             <div style={{
               flexGrow: 1,
               background: "#ffffff",
@@ -66,28 +67,38 @@ export default function Proposal2() {
               padding: "25px"
             }}>
               <h3 style={{ fontSize: "18px", marginBottom: "20px" }}>
-                ステップ配信（タイムラインUIイメージ）
+                テスト送信診断モード（UIイメージ）
               </h3>
 
-              <div style={{ lineHeight: "2" }}>
-                <div style={{ marginBottom: "20px" }}>
-                  <strong>ステップ1（友だち追加直後）</strong><br />
-                  条件：全員
-                </div>
+              {/* 診断ボタン */}
+              <div style={{
+                display: "flex",
+                gap: "15px",
+                marginBottom: "25px"
+              }}>
+                <button style={{
+                  padding: "12px 20px",
+                  background: "#4a90e2",
+                  color: "#fff",
+                  border: "none",
+                  borderRadius: "6px",
+                  cursor: "pointer"
+                }}>診断を実行</button>
+              </div>
 
-                <div style={{ marginBottom: "20px" }}>
-                  <strong>ステップ2（1日後）</strong><br />
-                  条件：タグ「興味あり」
-                </div>
+              {/* 診断結果 */}
+              <div style={{
+                background: "#f9fafc",
+                border: "1px solid #ccc",
+                borderRadius: "8px",
+                padding: "20px"
+              }}>
+                <h4 style={{ fontSize: "16px", marginBottom: "15px" }}>診断結果</h4>
 
-                <div style={{ marginBottom: "20px" }}>
-                  <strong>ステップ3（3日後）</strong><br />
-                  条件：属性「女性」
-                </div>
-
-                <div style={{ marginBottom: "20px" }}>
-                  <strong>ステップ4（7日後）</strong><br />
-                  条件：購入者のみ
+                <div style={{ lineHeight: "2" }}>
+                  <div style={{ color: "green" }}>✔ LINE公式アカウントの設定は正常です</div>
+                  <div style={{ color: "green" }}>✔ L Message 側の設定も問題ありません</div>
+                  <div style={{ color: "red" }}>✖ テスト送信が失敗しました（自動応答がOFFになっています）</div>
                 </div>
               </div>
 
@@ -106,25 +117,26 @@ export default function Proposal2() {
           border: "1px solid #ddd",
           fontSize: "14px"
         }}>
-{`ステップ開始
+{`テスト送信失敗
   ↓
-条件を満たす？
-  ├─ YES → 配信する
-  └─ NO  → 次のステップへ`}
+原因はどこ？
+  ├─ LINE公式アカウント側 → 設定ミスを表示
+  ├─ L Message 側 → 入力値の誤りを表示
+  └─ ネットワーク → 再試行を案内`}
         </pre>
       </section>
 
-      {/* 5. 工数（合計あり） */}
+      {/* 5. 工数 */}
       <section style={{ marginBottom: "60px" }}>
         <h2>5. 工数</h2>
         <ul>
-          <li>要件整理：1.5人日</li>
-          <li>UI設計：2.5人日</li>
-          <li>機能設計：1人日</li>
+          <li>要件整理：1人日</li>
+          <li>UI設計：2人日</li>
+          <li>機能設計：1.5人日</li>
           <li>簡易テスト：1人日</li>
         </ul>
         <p style={{ marginTop: "10px", fontWeight: "bold" }}>
-          ■ 合計：6人日
+          ■ 合計：5.5人日
         </p>
       </section>
 
@@ -132,9 +144,9 @@ export default function Proposal2() {
       <section style={{ marginBottom: "60px" }}>
         <h2>6. 実現可能性</h2>
         <ul>
-          <li>既存ロジックを流用できるため、バックエンド改修は最小限</li>
-          <li>UI改善が中心で、技術的難易度は高くない</li>
+          <li>既存テスト送信機能に診断ロジックを追加するだけなので技術的に可能</li>
           <li>LINE API の仕様変更は不要</li>
+          <li>UI改善と軽微なバックエンド追加で対応可能</li>
         </ul>
       </section>
 
@@ -142,8 +154,8 @@ export default function Proposal2() {
       <section style={{ marginBottom: "60px" }}>
         <h2>7. 既存機能との整合性</h2>
         <p>
-          現行のステップ配信機能を視覚化するだけなので、
-          既存ユーザーの設定が壊れることはありません。
+          現行のテスト送信機能を拡張するだけなので、
+          既存ユーザーの運用に影響はありません。
         </p>
       </section>
 
@@ -151,8 +163,9 @@ export default function Proposal2() {
       <section style={{ marginBottom: "60px" }}>
         <h2>8. 優先順位</h2>
         <p>
-          ステップ配信は多くのユーザーが利用する重要機能であり、
-          設定ミスが売上に直結するため優先度は高いです。
+          テスト送信は初期設定の最終確認であり、
+          ここが改善されることで設定ミスの早期発見につながります。
+          問い合わせ削減効果も高く、優先度は高いです。
         </p>
       </section>
 
@@ -160,9 +173,9 @@ export default function Proposal2() {
       <section style={{ marginBottom: "60px" }}>
         <h2>9. 実装時の確認事項</h2>
         <ul>
-          <li>既存ステップ配信データとの整合性</li>
-          <li>条件分岐の誤判定が起きないか</li>
-          <li>UI変更による操作負荷の増減</li>
+          <li>LINE公式アカウント API のレスポンス仕様の確認</li>
+          <li>診断ロジックが誤判定しないか</li>
+          <li>既存テスト送信機能との整合性</li>
         </ul>
       </section>
 

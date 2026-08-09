@@ -3,7 +3,7 @@ export default function Proposal1() {
     <main style={{ padding: "40px", fontFamily: "sans-serif", lineHeight: "1.8" }}>
       
       <h1 style={{ fontSize: "28px", marginBottom: "30px" }}>
-        改善案①：LINE連携・内部設定の自動診断（ヘルスチェック）機能の追加
+        改善案①：LINE連携・内部設定の自動診断（ヘルスチェック）機能
       </h1>
 
       {/* 1. 具体的な課題点 */}
@@ -105,7 +105,7 @@ export default function Proposal1() {
                 }}>内部設定診断</button>
               </div>
 
-              {/* 診断結果表示エリア（一般ユーザー向け表現） */}
+              {/* 診断結果表示エリア */}
               <div style={{
                 background: "#f9fafc",
                 border: "1px solid #ccc",
