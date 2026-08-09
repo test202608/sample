@@ -56,6 +56,19 @@ export default function Proposal1() {
                 <li>・メッセージ配信</li>
                 <li>・リッチメニュー</li>
                 <li>・設定</li>
+
+                {/* 新規追加メニュー（NEW） */}
+                <li style={{
+                  marginTop: "20px",
+                  padding: "10px",
+                  background: "#e8f3ff",
+                  border: "1px solid #4a90e2",
+                  borderRadius: "6px",
+                  fontWeight: "bold",
+                  color: "#4a90e2"
+                }}>
+                  LINE連携診断（NEW）
+                </li>
               </ul>
             </div>
 
@@ -137,31 +150,32 @@ export default function Proposal1() {
           border: "1px solid #ddd",
           fontSize: "14px"
         }}>
-{`ユーザー操作
+{`LINE連携診断（NEW）をクリック
   ↓
-診断開始
+診断画面が開く
   ↓
-Webhook応答チェック
+ユーザーがいずれかの診断ボタン
+（Webhook診断 / Messaging API診断 / 内部設定診断）を選択
   ↓
-Messaging APIチェック
+選択した診断処理を実行
   ↓
-内部設定チェック
-  ↓
-結果表示
+診断結果を画面に表示
 `}
         </pre>
       </section>
 
-      {/* 5. 工数 */}
+      {/* 5. 工数（セクション名は絶対固定） */}
       <section style={{ marginBottom: "60px" }}>
         <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>5. 工数</h2>
         <ul>
-          <li>診断ロジック：3〜4人日</li>
-          <li>UI作成：2人日</li>
-          <li>テスト：2人日</li>
+          <li>PHP基礎習得：3〜5人日</li>
+          <li>既存コード理解：3〜5人日</li>
+          <li>診断ロジック実装（PHP）：5〜7人日</li>
+          <li>UI作成（HTML/CSS/JavaScript）：1〜2人日</li>
+          <li>テスト：2〜3人日</li>
         </ul>
         <p style={{ marginTop: "10px", fontWeight: "bold" }}>
-          ■ 合計：7〜8人日
+          ■ 合計：14〜20人日（リスク工数込み）
         </p>
       </section>
 
@@ -180,7 +194,10 @@ Messaging APIチェック
       {/* 8. 優先順位 */}
       <section style={{ marginBottom: "60px" }}>
         <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>8. 優先順位</h2>
-        <p>問い合わせ削減効果が大きく、優先度は高いです。</p>
+        <p>
+          初期設定ミスの可視化により、ユーザーの自己解決率が向上し、  
+          結果として問い合わせ削減につながる可能性があります。
+        </p>
       </section>
 
       {/* 9. 実装時の確認事項 */}
@@ -188,9 +205,9 @@ Messaging APIチェック
         <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>9. 実装時の確認事項</h2>
         <ul>
           <li>診断ロジックの正確性</li>
-          <li>API応答の分類精度</li>
+          <li>API応答の正確な判定</li>
           <li>UIの視認性</li>
-          <li>内部設定の取得精度</li>
+          <li>内部設定の正確な取得</li>
         </ul>
       </section>
 
