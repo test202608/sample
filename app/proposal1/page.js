@@ -6,6 +6,7 @@ export default function Proposal1() {
         改善案①：LINE連携・内部設定の自動診断（ヘルスチェック）機能の追加
       </h1>
 
+      {/* 1. 課題点 */}
       <section style={{ marginBottom: "60px" }}>
         <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>1. 具体的な課題点</h2>
         <ul>
@@ -17,6 +18,7 @@ export default function Proposal1() {
         </ul>
       </section>
 
+      {/* 2. 改善内容 */}
       <section style={{ marginBottom: "60px" }}>
         <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>2. 改善内容（自動診断機能）</h2>
 
@@ -34,34 +36,99 @@ export default function Proposal1() {
         </ul>
       </section>
 
+      {/* 3. 図解（ビジュアル強化版） */}
       <section style={{ marginBottom: "60px" }}>
-        <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>3. 図解（診断画面）</h2>
+        <h2 style={{ fontSize: "22px", marginBottom: "20px" }}>3. 図解（ビジュアル構造）</h2>
 
+        {/* 図解全体の枠 */}
         <div style={{
           background: "#f7f7f7",
-          border: "1px solid #ddd",
           padding: "30px",
-          borderRadius: "8px",
-          marginBottom: "40px"
+          borderRadius: "10px",
+          border: "1px solid #ccc"
         }}>
-          <h3 style={{ fontSize: "20px", marginBottom: "10px" }}>
-            診断結果（例）
-          </h3>
 
+          {/* 上段：診断対象の3ブロック */}
           <div style={{
-            border: "1px dashed #aaa",
-            padding: "20px",
-            background: "#fff",
-            textAlign: "center"
+            display: "flex",
+            justifyContent: "space-between",
+            marginBottom: "30px"
           }}>
-            ★ Webhook：200（正常）  
-            ★ Messaging API：チャネルID一致  
-            ★ アクセストークン：有効  
-            ★ 自動応答：OFF（赤表示）
+            
+            {/* Webhook */}
+            <div style={{
+              width: "32%",
+              background: "#ffffff",
+              borderRadius: "8px",
+              border: "1px solid #ddd",
+              padding: "20px",
+              boxShadow: "0 2px 4px rgba(0,0,0,0.05)"
+            }}>
+              <h3 style={{ fontSize: "18px", marginBottom: "10px" }}>Webhook診断</h3>
+              <p style={{ fontSize: "14px", color: "#555" }}>
+                URL応答をチェックし、200/400/500を分類します。
+              </p>
+            </div>
+
+            {/* Messaging API */}
+            <div style={{
+              width: "32%",
+              background: "#ffffff",
+              borderRadius: "8px",
+              border: "1px solid #ddd",
+              padding: "20px",
+              boxShadow: "0 2px 4px rgba(0,0,0,0.05)"
+            }}>
+              <h3 style={{ fontSize: "18px", marginBottom: "10px" }}>Messaging API診断</h3>
+              <p style={{ fontSize: "14px", color: "#555" }}>
+                チャネルID・シークレット・トークンの一致を確認します。
+              </p>
+            </div>
+
+            {/* 内部設定 */}
+            <div style={{
+              width: "32%",
+              background: "#ffffff",
+              borderRadius: "8px",
+              border: "1px solid #ddd",
+              padding: "20px",
+              boxShadow: "0 2px 4px rgba(0,0,0,0.05)"
+            }}>
+              <h3 style={{ fontSize: "18px", marginBottom: "10px" }}>内部設定診断</h3>
+              <p style={{ fontSize: "14px", color: "#555" }}>
+                リッチメニュー・自動応答・フォーム設定を確認します。
+              </p>
+            </div>
+
           </div>
+
+          {/* 下段：診断結果の例 */}
+          <div style={{
+            background: "#ffffff",
+            borderRadius: "8px",
+            border: "1px solid #ddd",
+            padding: "25px",
+            boxShadow: "0 2px 4px rgba(0,0,0,0.05)"
+          }}>
+            <h3 style={{ fontSize: "18px", marginBottom: "15px" }}>診断結果（例）</h3>
+
+            <div style={{
+              display: "flex",
+              flexDirection: "column",
+              gap: "10px",
+              fontSize: "15px"
+            }}>
+              <div style={{ color: "green" }}>✔ Webhook：200（正常）</div>
+              <div style={{ color: "green" }}>✔ Messaging API：チャネルID一致</div>
+              <div style={{ color: "green" }}>✔ アクセストークン：有効</div>
+              <div style={{ color: "red" }}>✖ 自動応答：OFF（要修正）</div>
+            </div>
+          </div>
+
         </div>
       </section>
 
+      {/* 4. フローチャート */}
       <section style={{ marginBottom: "60px" }}>
         <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>4. フローチャート</h2>
         <pre style={{
@@ -88,6 +155,7 @@ Messaging APIチェック
         </pre>
       </section>
 
+      {/* 5. 工数 */}
       <section style={{ marginBottom: "60px" }}>
         <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>5. 工数</h2>
         <ul>
@@ -98,6 +166,7 @@ Messaging APIチェック
         </ul>
       </section>
 
+      {/* 6〜9 */}
       <section style={{ marginBottom: "60px" }}>
         <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>6. 実現可能性</h2>
         <p>既存APIと内部設定情報を利用するため、技術的に実現可能です。</p>
