@@ -76,8 +76,11 @@ export default function Proposal3() {
                 ステップ配信（UIイメージ）
               </h3>
 
-              {/* ステップ一覧 */}
+              {/* ステップ一覧（固定表示） */}
               <div style={{
+                position: "sticky",
+                top: "0",
+                zIndex: "10",
                 background: "#f9fafc",
                 border: "1px solid #ccc",
                 borderRadius: "8px",
@@ -86,44 +89,36 @@ export default function Proposal3() {
               }}>
                 <h4 style={{ fontSize: "16px", marginBottom: "15px" }}>ステップ一覧</h4>
                 <div style={{ display: "flex", gap: "10px" }}>
-                  <button style={{
+                  <div style={{
                     background: "#fff",
-                    border: "1px solid #ddd",
+                    border: "2px solid #4a90e2",
                     borderRadius: "6px",
                     padding: "15px",
-                    width: "30%",
-                    textAlign: "left",
-                    cursor: "pointer"
+                    width: "30%"
                   }}>
-                    <strong>ステップ1</strong>
+                    ステップ1
                     <div style={{ fontSize: "12px", color: "#666" }}>メッセージ送信</div>
-                  </button>
-
-                  <button style={{
+                  </div>
+                  <div style={{
                     background: "#fff",
                     border: "1px solid #ddd",
                     borderRadius: "6px",
                     padding: "15px",
-                    width: "30%",
-                    textAlign: "left",
-                    cursor: "pointer"
+                    width: "30%"
                   }}>
-                    <strong>ステップ2</strong>
+                    ステップ2
                     <div style={{ fontSize: "12px", color: "#666" }}>案内メッセージ</div>
-                  </button>
-
-                  <button style={{
+                  </div>
+                  <div style={{
                     background: "#fff",
                     border: "1px solid #ddd",
                     borderRadius: "6px",
                     padding: "15px",
-                    width: "30%",
-                    textAlign: "left",
-                    cursor: "pointer"
+                    width: "30%"
                   }}>
-                    <strong>ステップ3</strong>
+                    ステップ3
                     <div style={{ fontSize: "12px", color: "#666" }}>別ルート案内</div>
-                  </button>
+                  </div>
                 </div>
               </div>
 
@@ -170,9 +165,7 @@ export default function Proposal3() {
                     border: "none",
                     borderRadius: "6px",
                     cursor: "pointer"
-                  }}>
-                    YES → ステップ2へ進む
-                  </button>
+                  }}>YES → ステップ2へ進む</button>
 
                   <button style={{
                     padding: "10px 15px",
@@ -181,9 +174,7 @@ export default function Proposal3() {
                     border: "none",
                     borderRadius: "6px",
                     cursor: "pointer"
-                  }}>
-                    NO → ステップ3へ進む
-                  </button>
+                  }}>NO → ステップ3へ進む</button>
                 </div>
               </div>
 
