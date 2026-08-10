@@ -40,7 +40,7 @@ export default function Proposal3() {
           padding: "30px",
           borderRadius: "12px",
           border: "1px solid #ccc",
-          boxShadow: "0 4px 10px rgba(0,0,0,0.08)"
+          boxShadow: "0 4px 10px rgba(0,0,0,0.08)",
         }}>
           <div style={{ display: "flex" }}>
 
@@ -51,7 +51,7 @@ export default function Proposal3() {
               borderRadius: "8px",
               border: "1px solid #ddd",
               padding: "20px",
-              marginRight: "20px"
+              marginRight: "20px",
             }}>
               <h3 style={{ fontSize: "16px", marginBottom: "15px" }}>メニュー</h3>
               <ul style={{ listStyle: "none", paddingLeft: "0", lineHeight: "2" }}>
@@ -69,8 +69,8 @@ export default function Proposal3() {
               flexGrow: 1,
               background: "#ffffff",
               borderRadius: "8px",
-              border: "1px solid "#ddd",
-              padding: "25px"
+              border: "1px solid #ddd",
+              padding: "25px",
             }}>
               <h3 style={{ fontSize: "18px", marginBottom: "20px" }}>
                 ステップ配信一覧（UIイメージ）
@@ -81,7 +81,7 @@ export default function Proposal3() {
                 width: "100%",
                 borderCollapse: "collapse",
                 marginBottom: "25px",
-                fontSize: "15px"
+                fontSize: "15px",
               }}>
                 <thead>
                   <tr style={{ background: "#f2f2f2" }}>
@@ -109,7 +109,7 @@ export default function Proposal3() {
                 borderRadius: "8px",
                 padding: "20px",
                 width: "60%",
-                boxShadow: "0 4px 10px rgba(0,0,0,0.1)"
+                boxShadow: "0 4px 10px rgba(0,0,0,0.1)",
               }}>
                 <h4 style={{ fontSize: "16px", marginBottom: "10px" }}>設定内容プレビュー</h4>
                 <div style={{ lineHeight: "1.8", fontSize: "14px" }}>
@@ -136,7 +136,7 @@ export default function Proposal3() {
           padding: "20px",
           borderRadius: "8px",
           border: "1px solid #ddd",
-          fontSize: "14px"
+          fontSize: "14px",
         }}>
 {`ステップ配信一覧を表示
   ↓
