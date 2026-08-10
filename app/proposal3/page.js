@@ -7,17 +7,19 @@ export default function Proposal3() {
       </div>
 
       <h1 style={{ fontSize: "28px", marginBottom: "30px" }}>
-        改善案③：リッチメニュー操作性の最適化（ユーザー導線改善）
+        改善案③：ステップ配信・タグ・条件分岐の関係性の可視化と設定ミス防止
       </h1>
 
       {/* 1. 具体的な課題点 */}
       <section style={{ marginBottom: "60px" }}>
         <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>1. 具体的な課題点</h2>
         <ul>
-          <li>リッチメニューの編集画面が直感的でなく、操作ミスが発生しやすい（UI/UX）</li>
-          <li>ボタン配置の視認性が低く、ユーザーが迷いやすい（UI/UX）</li>
-          <li>編集内容の反映タイミングが分かりづらい（UI/UX）</li>
-          <li>複数メニューの切り替えが煩雑で、運用負荷が高い（運用面）</li>
+          <li>ステップ配信・タグ付与・条件分岐の関係性が画面上で理解しづらい（UI/UX）</li>
+          <li>「どのタイミングでタグが付くのか」が視覚的に分からない（UI/UX）</li>
+          <li>条件分岐の評価順序が不明瞭で誤設定が起きやすい（機能面）</li>
+          <li>ステップ配信の流れが“点の集合”として表示され、全体像が把握しづらい（UI/UX）</li>
+          <li>条件分岐の結果がどのステップに進むか直感的に理解できない（UI/UX）</li>
+          <li>誤設定により意図しない配信が発生するリスクがある（運用面）</li>
         </ul>
       </section>
 
@@ -25,8 +27,8 @@ export default function Proposal3() {
       <section style={{ marginBottom: "60px" }}>
         <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>2. 改善内容</h2>
         <p>
-          リッチメニュー編集画面の導線を最適化し、  
-          ボタン配置の視認性向上・編集内容の即時反映・メニュー切り替えの簡略化を実現するUI改善を行います。
+          ステップ配信・タグ付与・条件分岐の関係性をフローチャート形式で可視化し、
+          条件分岐の評価順序を明示し、誤設定を防止するためのシミュレーション機能を追加します。
         </p>
       </section>
 
@@ -43,6 +45,7 @@ export default function Proposal3() {
         }}>
           <div style={{ display: "flex" }}>
 
+            {/* 左メニュー */}
             <div style={{
               width: "22%",
               background: "#ffffff",
@@ -56,11 +59,13 @@ export default function Proposal3() {
                 <li>・ダッシュボード</li>
                 <li>・チャット</li>
                 <li>・メッセージ配信</li>
-                <li>・リッチメニュー（改善）</li>
+                <li>・ステップ配信（改善）</li>
+                <li>・タグ管理</li>
                 <li>・設定</li>
               </ul>
             </div>
 
+            {/* 右側 UIモック */}
             <div style={{
               flexGrow: 1,
               background: "#ffffff",
@@ -69,9 +74,10 @@ export default function Proposal3() {
               padding: "25px"
             }}>
               <h3 style={{ fontSize: "18px", marginBottom: "20px" }}>
-                リッチメニュー編集（UIイメージ）
+                ステップ配信（UIイメージ）
               </h3>
 
+              {/* フローチャート表示 */}
               <div style={{
                 background: "#f9fafc",
                 border: "1px solid #ccc",
@@ -79,32 +85,55 @@ export default function Proposal3() {
                 padding: "20px",
                 marginBottom: "25px"
               }}>
-                <h4 style={{ fontSize: "16px", marginBottom: "15px" }}>ボタン配置プレビュー</h4>
-                <div style={{
-                  display: "grid",
-                  gridTemplateColumns: "1fr 1fr",
-                  gap: "10px"
+                <h4 style={{ fontSize: "16px", marginBottom: "15px" }}>ステップ配信フローチャート</h4>
+
+                <pre style={{
+                  background: "#fff",
+                  padding: "15px",
+                  borderRadius: "6px",
+                  border: "1px solid #ddd",
+                  fontSize: "14px",
+                  lineHeight: "1.8"
                 }}>
-                  <div style={{ background: "#e8f3ff", padding: "15px", borderRadius: "6px" }}>ボタン①</div>
-                  <div style={{ background: "#e8f3ff", padding: "15px", borderRadius: "6px" }}>ボタン②</div>
-                  <div style={{ background: "#e8f3ff", padding: "15px", borderRadius: "6px" }}>ボタン③</div>
-                  <div style={{ background: "#e8f3ff", padding: "15px", borderRadius: "6px" }}>ボタン④</div>
-                </div>
+{`[ステップ1：メッセージ送信]
+        │
+        ▼
+[タグ付与：タグA]
+        │
+        ▼
+[条件分岐：タグAが付いている？]
+     ┌───────────────┐
+     │ YES               │ NO
+     ▼                   ▼
+[ステップ2]         [ステップ3]`}
+                </pre>
               </div>
 
+              {/* シミュレーション機能 */}
               <div style={{
                 background: "#f9fafc",
                 border: "1px solid #ccc",
                 borderRadius: "8px",
                 padding: "20px"
               }}>
-                <h4 style={{ fontSize: "16px", marginBottom: "15px" }}>編集項目</h4>
-                <ul style={{ lineHeight: "2" }}>
-                  <li>・ボタン名の編集</li>
-                  <li>・遷移先URLの設定</li>
-                  <li>・アクション種別の選択</li>
-                  <li>・メニュー切り替えの即時反映</li>
-                </ul>
+                <h4 style={{ fontSize: "16px", marginBottom: "15px" }}>シミュレーション機能</h4>
+                <button style={{
+                  padding: "12px 20px",
+                  background: "#4a90e2",
+                  color: "#fff",
+                  border: "none",
+                  borderRadius: "6px",
+                  cursor: "pointer",
+                  marginBottom: "15px"
+                }}>
+                  このユーザーでシミュレーション
+                </button>
+
+                <div style={{ lineHeight: "2" }}>
+                  <div style={{ color: "green" }}>✔ タグAが付与されます</div>
+                  <div style={{ color: "green" }}>✔ 条件分岐の結果：YES</div>
+                  <div style={{ color: "green" }}>✔ 次のステップ：ステップ2へ進みます</div>
+                </div>
               </div>
 
             </div>
@@ -122,20 +151,20 @@ export default function Proposal3() {
           border: "1px solid #ddd",
           fontSize: "14px"
         }}>
-{`リッチメニュー編集画面を開く
+{`ステップ配信（改善）をクリック
   ↓
-ボタン配置を確認
+フローチャート画面が開く
   ↓
-編集項目を入力
+タグ付与・条件分岐の流れを確認
   ↓
-即時プレビューで反映を確認
+必要に応じてシミュレーションを実行
   ↓
-保存して公開
+設定ミスがあれば警告を表示
 `}
         </pre>
       </section>
 
-      {/* 5. 工数（合計行の文言修正済み） */}
+      {/* 5. 工数（項番＋合計行） */}
       <section style={{ marginBottom: "60px" }}>
         <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>5. 工数</h2>
 
@@ -150,82 +179,89 @@ export default function Proposal3() {
             </tr>
           </thead>
           <tbody>
+
             <tr style={{ backgroundColor: "#E8F5E9" }}>
               <td style={{ padding: "10px" }}>1</td>
-              <td style={{ padding: "10px" }}>既存UI構造の理解</td>
-              <td style={{ padding: "10px" }}>HTML / CSS / JavaScript / jQuery / Bootstrap / LME-UI</td>
+              <td style={{ padding: "10px" }}>既存ステップ配信ロジックの理解</td>
+              <td style={{ padding: "10px" }}>PHP / JavaScript / HTML / CSS / jQuery</td>
               <td style={{ padding: "10px" }}>2〜3人日</td>
               <td style={{ padding: "10px" }}>
-                リッチメニュー編集画面の既存導線・UI構造を把握する必要があるため。
-              </td>
-            </tr>
-            <tr style={{ backgroundColor: "#F1F8E9" }}>
-              <td style={{ padding: "10px" }}>2</td>
-              <td style={{ padding: "10px" }}>新UI導線の設計</td>
-              <td style={{ padding: "10px" }}>HTML / CSS / JavaScript / jQuery / Bootstrap / LME-UI</td>
-              <td style={{ padding: "10px" }}>2〜3人日</td>
-              <td style={{ padding: "10px" }}>
-                ボタン配置・編集項目・即時反映など新規導線を設計するため。
-              </td>
-            </tr>
-            <tr style={{ backgroundColor: "#E8F5E9" }}>
-              <td style={{ padding: "10px" }}>3</td>
-              <td style={{ padding: "10px" }}>UI実装</td>
-              <td style={{ padding: "10px" }}>HTML / CSS / JavaScript / jQuery / Bootstrap / LME-UI</td>
-              <td style={{ padding: "10px" }}>3〜5人日</td>
-              <td style={{ padding: "10px" }}>
-                プレビューUI・編集項目UI・即時反映ロジックなど複数コンポーネントを実装するため。
-              </td>
-            </tr>
-            <tr style={{ backgroundColor: "#F1F8E9" }}>
-              <td style={{ padding: "10px" }}>4</td>
-              <td style={{ padding: "10px" }}>テスト</td>
-              <td style={{ padding: "10px" }}>PHP / UIテスト / API応答検証</td>
-              <td style={{ padding: "10px" }}>2〜3人日</td>
-              <td style={{ padding: "10px" }}>
-                UI反映タイミング・編集内容保存・複数メニュー切替など複数パターンの検証が必要なため。
+                ステップ配信・タグ付与・条件分岐の既存仕様を把握する必要があるため。
               </td>
             </tr>
 
-            {/* 合計行（修正済み） */}
+            <tr style={{ backgroundColor: "#F1F8E9" }}>
+              <td style={{ padding: "10px" }}>2</td>
+              <td style={{ padding: "10px" }}>フローチャートUI設計</td>
+              <td style={{ padding: "10px" }}>HTML / CSS / JavaScript / jQuery / LME-UI</td>
+              <td style={{ padding: "10px" }}>2〜3人日</td>
+              <td style={{ padding: "10px" }}>
+                ステップ配信の流れを視覚化する新規UIコンポーネントを設計するため。
+              </td>
+            </tr>
+
+            <tr style={{ backgroundColor: "#E8F5E9" }}>
+              <td style={{ padding: "10px" }}>3</td>
+              <td style={{ padding: "10px" }}>シミュレーション機能の実装</td>
+              <td style={{ padding: "10px" }}>PHP / API応答処理 / 条件分岐ロジック</td>
+              <td style={{ padding: "10px" }}>2〜3人日</td>
+              <td style={{ padding: "10px" }}>
+                条件分岐の結果を事前に確認するためのロジックを新規実装するため。
+              </td>
+            </tr>
+
+            <tr style={{ backgroundColor: "#F1F8E9" }}>
+              <td style={{ padding: "10px" }}>4</td>
+              <td style={{ padding: "10px" }}>テスト</td>
+              <td style={{ padding: "10px" }}>PHP / UIテスト / ロジック検証</td>
+              <td style={{ padding: "10px" }}>2〜3人日</td>
+              <td style={{ padding: "10px" }}>
+                条件分岐・タグ付与・ステップ遷移の複数パターンを検証する必要があるため。
+              </td>
+            </tr>
+
+            {/* 合計行 */}
             <tr style={{ backgroundColor: "#C8E6C9", fontWeight: "bold" }}>
               <td style={{ padding: "10px" }}>合計</td>
               <td style={{ padding: "10px" }}>ー</td>
               <td style={{ padding: "10px" }}>ー</td>
-              <td style={{ padding: "10px" }}>9〜14人日</td>
+              <td style={{ padding: "10px" }}>8〜12人日</td>
               <td style={{ padding: "10px" }}>エルメの作業未経験者を想定したリスクを加味</td>
             </tr>
+
           </tbody>
         </table>
-
       </section>
 
-      {/* 6〜9（既存のまま） */}
+      {/* 6〜9（既存のまま構造維持） */}
       <section style={{ marginBottom: "60px" }}>
         <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>6. 実現可能性</h2>
-        <p>既存UI構造を活かした改善のため、技術的に実現可能です。</p>
+        <p>
+          ステップ配信・タグ付与・条件分岐は既存機能であり、視覚化とシミュレーションは拡張で実現可能です。
+        </p>
       </section>
 
       <section style={{ marginBottom: "60px" }}>
         <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>7. 既存機能との整合性</h2>
-        <p>リッチメニュー機能の操作性向上に直結する改善であり、整合性が高いです。</p>
+        <p>
+          既存のステップ配信ロジックを破壊せず、UI改善と補助機能の追加のみで整合性を保てます。
+        </p>
       </section>
 
       <section style={{ marginBottom: "60px" }}>
         <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>8. 優先順位</h2>
         <p>
-          操作ミスの減少により、ユーザーの運用負荷が軽減し、  
-          結果として問い合わせ削減につながる可能性があります。
+          ステップ配信は全ユーザーが利用する主要機能であり、誤設定防止の効果が大きいため優先度が高いです。
         </p>
       </section>
 
       <section style={{ marginBottom: "60px" }}>
         <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>9. 実装時の確認事項</h2>
         <ul>
-          <li>UI導線の分かりやすさ</li>
-          <li>編集内容の即時反映の正確性</li>
-          <li>ボタン配置の視認性</li>
-          <li>内部設定の正確な取得</li>
+          <li>条件分岐ロジックの正確性</li>
+          <li>タグ付与タイミングの整合性</li>
+          <li>ステップ遷移の視認性</li>
+          <li>既存ステップ配信との互換性</li>
         </ul>
       </section>
 
