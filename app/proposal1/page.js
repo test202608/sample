@@ -197,7 +197,7 @@ export default function Proposal1() {
             <tr style={{ backgroundColor: "#F1F8E9" }}>
               <td style={{ padding: "10px" }}>4</td>
               <td style={{ padding: "10px" }}>テスト</td>
-              <td style={{ padding: "10px" }}>PHP / UIテスト</td>
+              <td style={{ padding: "10px" }}>-</td>
               <td style={{ padding: "10px" }}>2〜3人日</td>
               <td style={{ padding: "10px" }}>複数パターンの検証が必要であるためである。</td>
             </tr>

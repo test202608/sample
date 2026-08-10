@@ -193,7 +193,7 @@ export default function Proposal3() {
             <tr style={{ backgroundColor: "#F1F8E9" }}>
               <td style={{ padding: "10px" }}>4</td>
               <td style={{ padding: "10px" }}>テスト</td>
-              <td style={{ padding: "10px" }}>UIテスト / API応答確認</td>
+              <td style={{ padding: "10px" }}>-</td>
               <td style={{ padding: "10px" }}>2〜3人日</td>
               <td style={{ padding: "10px" }}>マウスオーバー時の表示・非表示、API応答の整合性を確認する必要があるためである。</td>
             </tr>

@@ -191,7 +191,7 @@ export default function Proposal2() {
             <tr style={{ backgroundColor: "#F1F8E9" }}>
               <td style={{ padding: "10px" }}>4</td>
               <td style={{ padding: "10px" }}>テスト</td>
-              <td style={{ padding: "10px" }}>UIテスト / ロジック検証</td>
+              <td style={{ padding: "10px" }}>-</td>
               <td style={{ padding: "10px" }}>2〜3人日</td>
               <td style={{ padding: "10px" }}>誤配信リスク抽出ロジックの複数パターンを検証する必要があるためである。</td>
             </tr>
