@@ -32,7 +32,7 @@ export default function Home() {
           </li>
           <li>
             <strong>改善案③（運用効率の向上）</strong><br />
-            運用効率の向上が目的であり、初期設定の成功が前提となるため。
+            一覧画面で設定内容を俯瞰できるようになり、編集画面への往復が不要になるため。
           </li>
         </ul>
       </section>
@@ -69,7 +69,7 @@ export default function Home() {
               <td style={{ padding: "10px" }}>改善案③</td>
               <td style={{ padding: "10px" }}>
                 <a href="/proposal3" style={{ color: "#0066cc" }}>
-                  ステップ配信の視認性向上と設定ミス防止
+                  ステップ配信一覧における設定内容のマウスオーバープレビュー機能の追加
                 </a>
               </td>
             </tr>
