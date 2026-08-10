@@ -155,13 +155,14 @@ export default function Proposal1() {
         </pre>
       </section>
 
-      {/* 5. 工数（作業内容と利用技術を分離） */}
+      {/* 5. 工数（項番を数字に変更） */}
       <section style={{ marginBottom: "60px" }}>
         <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>5. 工数</h2>
 
         <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "18px" }}>
           <thead>
             <tr style={{ backgroundColor: "#2E7D32", color: "white" }}>
+              <th style={{ padding: "10px", textAlign: "left" }}>項番</th>
               <th style={{ padding: "10px", textAlign: "left" }}>作業内容</th>
               <th style={{ padding: "10px", textAlign: "left" }}>利用技術</th>
               <th style={{ padding: "10px", textAlign: "left" }}>工数</th>
@@ -170,6 +171,7 @@ export default function Proposal1() {
           </thead>
           <tbody>
             <tr style={{ backgroundColor: "#E8F5E9" }}>
+              <td style={{ padding: "10px" }}>1</td>
               <td style={{ padding: "10px" }}>既存コード理解</td>
               <td style={{ padding: "10px" }}>PHP / JavaScript / HTML / CSS / jQuery</td>
               <td style={{ padding: "10px" }}>5〜7人日</td>
@@ -178,6 +180,7 @@ export default function Proposal1() {
               </td>
             </tr>
             <tr style={{ backgroundColor: "#F1F8E9" }}>
+              <td style={{ padding: "10px" }}>2</td>
               <td style={{ padding: "10px" }}>診断ロジック実装</td>
               <td style={{ padding: "10px" }}>PHP / JSON処理 / API通信（HTTP）</td>
               <td style={{ padding: "10px" }}>6〜8人日</td>
@@ -186,6 +189,7 @@ export default function Proposal1() {
               </td>
             </tr>
             <tr style={{ backgroundColor: "#E8F5E9" }}>
+              <td style={{ padding: "10px" }}>3</td>
               <td style={{ padding: "10px" }}>UI作成</td>
               <td style={{ padding: "10px" }}>HTML / CSS / JavaScript / jQuery / Bootstrap / LME-UI</td>
               <td style={{ padding: "10px" }}>1〜2人日</td>
@@ -194,6 +198,7 @@ export default function Proposal1() {
               </td>
             </tr>
             <tr style={{ backgroundColor: "#F1F8E9" }}>
+              <td style={{ padding: "10px" }}>4</td>
               <td style={{ padding: "10px" }}>テスト</td>
               <td style={{ padding: "10px" }}>PHP / API応答検証 / UIテスト</td>
               <td style={{ padding: "10px" }}>2〜3人日</td>
@@ -201,14 +206,25 @@ export default function Proposal1() {
                 正常系・異常系・設定不一致・API遅延など複数パターンの検証が必要なため。
               </td>
             </tr>
+
+            {/* 合計行 */}
+            <tr style={{ backgroundColor: "#C8E6C9", fontWeight: "bold" }}>
+              <td style={{ padding: "10px" }}>合計</td>
+              <td style={{ padding: "10px" }}>ー</td>
+              <td style={{ padding: "10px" }}>ー</td>
+              <td style={{ padding: "10px" }}>14〜20人日</td>
+              <td style={{ padding: "10px" }}>リスク工数込み</td>
+            </tr>
           </tbody>
         </table>
 
-        <p style={{ marginTop: "10px", fontWeight: "bold" }}>
-          ■ 合計：14〜20人日（リスク工数込み）
+        {/* 注意文 */}
+        <p style={{ marginTop: "10px", fontSize: "14px", color: "#555" }}>
+          上記は、エルメの作業未経験者を想定したリスク込みの工数です。
         </p>
       </section>
 
+      {/* 6〜9（既存のまま） */}
       <section style={{ marginBottom: "60px" }}>
         <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>6. 実現可能性</h2>
         <p>既存APIと内部設定情報を利用するため、技術的に実現可能です。</p>
