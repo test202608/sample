@@ -15,10 +15,9 @@ export default function Proposal3() {
         <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>1. 具体的な課題点</h2>
         <ul>
           <li>ステップ配信・タグ付与・条件分岐の関係性が画面上で理解しづらい（UI/UX）</li>
-          <li>「どのタイミングでタグが付くのか」が視覚的に分からない（UI/UX）</li>
+          <li>タグ付与のタイミングが視覚的に分からない（UI/UX）</li>
           <li>条件分岐の評価順序が不明瞭で誤設定が起きやすい（機能面）</li>
-          <li>ステップ配信の流れが“点の集合”として表示され、全体像が把握しづらい（UI/UX）</li>
-          <li>条件分岐の結果がどのステップに進むか直感的に理解できない（UI/UX）</li>
+          <li>ステップ配信の流れが全体として把握しづらい（UI/UX）</li>
           <li>誤設定により意図しない配信が発生するリスクがある（運用面）</li>
         </ul>
       </section>
@@ -27,12 +26,12 @@ export default function Proposal3() {
       <section style={{ marginBottom: "60px" }}>
         <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>2. 改善内容</h2>
         <p>
-          ステップ配信・タグ付与・条件分岐の関係性をフローチャート形式で可視化し、
+          ステップ配信の流れをフローチャート形式で可視化し、
           条件分岐の評価順序を明示し、誤設定を防止するためのシミュレーション機能を追加します。
         </p>
       </section>
 
-      {/* 3. 図解（UIモック） */}
+      {/* 3. 図解（UIモックのみ） */}
       <section style={{ marginBottom: "60px" }}>
         <h2 style={{ fontSize: "22px", marginBottom: "20px" }}>3. 図解</h2>
 
@@ -77,7 +76,7 @@ export default function Proposal3() {
                 ステップ配信（UIイメージ）
               </h3>
 
-              {/* フローチャート表示 */}
+              {/* フローチャート表示（UIとしての図解） */}
               <div style={{
                 background: "#f9fafc",
                 border: "1px solid #ccc",
@@ -85,9 +84,9 @@ export default function Proposal3() {
                 padding: "20px",
                 marginBottom: "25px"
               }}>
-                <h4 style={{ fontSize: "16px", marginBottom: "15px" }}>ステップ配信フローチャート</h4>
+                <h4 style={{ fontSize: "16px", marginBottom: "15px" }}>ステップ配信フローチャート（UI表示）</h4>
 
-                <pre style={{
+                <div style={{
                   background: "#fff",
                   padding: "15px",
                   borderRadius: "6px",
@@ -95,21 +94,11 @@ export default function Proposal3() {
                   fontSize: "14px",
                   lineHeight: "1.8"
                 }}>
-{`[ステップ1：メッセージ送信]
-        │
-        ▼
-[タグ付与：タグA]
-        │
-        ▼
-[条件分岐：タグAが付いている？]
-     ┌───────────────┐
-     │ YES               │ NO
-     ▼                   ▼
-[ステップ2]         [ステップ3]`}
-                </pre>
+                  <div>ステップ1 → タグ付与 → 条件分岐 → ステップ2 / ステップ3</div>
+                </div>
               </div>
 
-              {/* シミュレーション機能 */}
+              {/* シミュレーション機能（UIとしての図解） */}
               <div style={{
                 background: "#f9fafc",
                 border: "1px solid #ccc",
@@ -130,9 +119,7 @@ export default function Proposal3() {
                 </button>
 
                 <div style={{ lineHeight: "2" }}>
-                  <div style={{ color: "green" }}>✔ タグAが付与されます</div>
-                  <div style={{ color: "green" }}>✔ 条件分岐の結果：YES</div>
-                  <div style={{ color: "green" }}>✔ 次のステップ：ステップ2へ進みます</div>
+                  <div style={{ color: "green" }}>✔ 条件分岐の結果：ステップ2へ進みます</div>
                 </div>
               </div>
 
@@ -141,7 +128,7 @@ export default function Proposal3() {
         </div>
       </section>
 
-      {/* 4. フローチャート */}
+      {/* 4. フローチャート（処理流れ） */}
       <section style={{ marginBottom: "60px" }}>
         <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>4. フローチャート</h2>
         <pre style={{
