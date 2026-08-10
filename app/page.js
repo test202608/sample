@@ -28,7 +28,7 @@ export default function Home() {
           </li>
           <li>
             <strong>改善案②（運用の安全保証）</strong><br />
-            初期設定の最終確認であり、設定ミスの早期発見に直結するため。
+            配信前に誤配信リスクを事前に把握できるため、運用の安全性に直結するため。
           </li>
           <li>
             <strong>改善案③（運用効率の向上）</strong><br />
@@ -61,7 +61,7 @@ export default function Home() {
               <td style={{ padding: "10px" }}>改善案②</td>
               <td style={{ padding: "10px" }}>
                 <a href="/proposal2" style={{ color: "#0066cc" }}>
-                  テスト送信機能の明確化とエラー原因の可視化
+                  送信前「誤配信防止チェック」機能
                 </a>
               </td>
             </tr>
