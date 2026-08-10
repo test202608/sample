@@ -69,7 +69,7 @@ export default function Home() {
               <td style={{ padding: "10px" }}>改善案③</td>
               <td style={{ padding: "10px" }}>
                 <a href="/proposal3" style={{ color: "#0066cc" }}>
-                  ステップ配信一覧における設定内容のマウスオーバープレビュー機能の追加
+                  ステップ配信一覧における設定内容のプレビュー機能の追加
                 </a>
               </td>
             </tr>

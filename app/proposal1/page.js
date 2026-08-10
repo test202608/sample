@@ -175,7 +175,7 @@ export default function Proposal1() {
               <td style={{ padding: "10px" }}>既存コード理解</td>
               <td style={{ padding: "10px" }}>PHP / JavaScript / HTML / CSS / jQuery</td>
               <td style={{ padding: "10px" }}>5〜7人日</td>
-              <td style={{ padding: "10px" }}>4領域を横断して調査する必要があるためである。</td>
+              <td style={{ padding: "10px" }}>LINE連携設定・Webhook設定・Messaging API設定・内部設定の4領域を横断して調査する必要があるためである。</td>
             </tr>
 
             <tr style={{ backgroundColor: "#F1F8E9" }}>
