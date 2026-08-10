@@ -2,13 +2,10 @@ export default function Proposal2() {
   return (
     <main style={{ padding: "40px", fontFamily: "sans-serif", lineHeight: "1.8" }}>
 
-      {/* 上部：トップページに戻る */}
       <div style={{ marginBottom: "20px" }}>
-        <a href="/" style={{ color: "#0066cc", fontSize: "18px" }}>
-          ← トップページに戻る
-        </a>
+        <a href="/" style={{ color: "#0066cc", fontSize: "18px" }}>← トップページに戻る</a>
       </div>
-      
+
       <h1 style={{ fontSize: "28px", marginBottom: "30px" }}>
         改善案②：メッセージ配信の成功率を最大化する「送信前安全チェック」機能
       </h1>
@@ -44,10 +41,8 @@ export default function Proposal2() {
           border: "1px solid #ccc",
           boxShadow: "0 4px 10px rgba(0,0,0,0.08)"
         }}>
-
           <div style={{ display: "flex" }}>
 
-            {/* 左メニュー */}
             <div style={{
               width: "22%",
               background: "#ffffff",
@@ -63,8 +58,6 @@ export default function Proposal2() {
                 <li>・メッセージ配信</li>
                 <li>・リッチメニュー</li>
                 <li>・設定</li>
-
-                {/* NEW */}
                 <li style={{
                   marginTop: "20px",
                   padding: "10px",
@@ -79,7 +72,6 @@ export default function Proposal2() {
               </ul>
             </div>
 
-            {/* 右側：送信前チェック画面 */}
             <div style={{
               flexGrow: 1,
               background: "#ffffff",
@@ -91,7 +83,6 @@ export default function Proposal2() {
                 送信前安全チェック（UIイメージ）
               </h3>
 
-              {/* チェックボタン */}
               <div style={{ marginBottom: "25px" }}>
                 <button style={{
                   padding: "12px 20px",
@@ -103,7 +94,6 @@ export default function Proposal2() {
                 }}>送信前チェックを実行</button>
               </div>
 
-              {/* 結果表示 */}
               <div style={{
                 background: "#f9fafc",
                 border: "1px solid #ccc",
@@ -148,15 +138,55 @@ export default function Proposal2() {
         </pre>
       </section>
 
-      {/* 5. 工数 */}
+      {/* 5. 工数（作業内容と利用技術を分離） */}
       <section style={{ marginBottom: "60px" }}>
         <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>5. 工数</h2>
-        <ul>
-          <li>既存コード理解：4〜6人日</li>
-          <li>チェックロジック実装（PHP）：4〜6人日</li>
-          <li>UI作成（HTML/CSS/JavaScript）：1〜2人日</li>
-          <li>テスト：2〜3人日</li>
-        </ul>
+
+        <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "18px" }}>
+          <thead>
+            <tr style={{ backgroundColor: "#2E7D32", color: "white" }}>
+              <th style={{ padding: "10px", textAlign: "left" }}>作業内容</th>
+              <th style={{ padding: "10px", textAlign: "left" }}>利用技術</th>
+              <th style={{ padding: "10px", textAlign: "left" }}>工数</th>
+              <th style={{ padding: "10px", textAlign: "left" }}>根拠</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style={{ backgroundColor: "#E8F5E9" }}>
+              <td style={{ padding: "10px" }}>既存コード理解</td>
+              <td style={{ padding: "10px" }}>PHP / JavaScript / HTML / CSS / jQuery</td>
+              <td style={{ padding: "10px" }}>4〜6人日</td>
+              <td style={{ padding: "10px" }}>
+                配信機能・内部設定・LINE連携の3領域を横断して調査する必要があるため。
+              </td>
+            </tr>
+            <tr style={{ backgroundColor: "#F1F8E9" }}>
+              <td style={{ padding: "10px" }}>チェックロジック実装</td>
+              <td style={{ padding: "10px" }}>PHP / JSON処理 / API通信（HTTP）</td>
+              <td style={{ padding: "10px" }}>4〜6人日</td>
+              <td style={{ padding: "10px" }}>
+                配信対象判定・内部設定整合性チェック・エラー分類ロジックを実装するため。
+              </td>
+            </tr>
+            <tr style={{ backgroundColor: "#E8F5E9" }}>
+              <td style={{ padding: "10px" }}>UI作成</td>
+              <td style={{ padding: "10px" }}>HTML / CSS / JavaScript / jQuery / Bootstrap / LME-UI</td>
+              <td style={{ padding: "10px" }}>1〜2人日</td>
+              <td style={{ padding: "10px" }}>
+                チェックボタン・結果表示エリア・警告表示など新規UIコンポーネントを追加するため。
+              </td>
+            </tr>
+            <tr style={{ backgroundColor: "#F1F8E9" }}>
+              <td style={{ padding: "10px" }}>テスト</td>
+              <td style={{ padding: "10px" }}>PHP / API応答検証 / UIテスト</td>
+              <td style={{ padding: "10px" }}>2〜3人日</td>
+              <td style={{ padding: "10px" }}>
+                配信対象ゼロ・内部設定不整合・LINE連携不備など複数パターンの検証が必要なため。
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
         <p style={{ marginTop: "10px", fontWeight: "bold" }}>
           ■ 合計：11〜17人日（リスク工数込み）
         </p>
@@ -194,11 +224,8 @@ export default function Proposal2() {
         </ul>
       </section>
 
-      {/* 下部：トップページに戻る */}
       <div style={{ marginTop: "40px" }}>
-        <a href="/" style={{ color: "#0066cc", fontSize: "18px" }}>
-          ← トップページに戻る
-        </a>
+        <a href="/" style={{ color: "#0066cc", fontSize: "18px" }}>← トップページに戻る</a>
       </div>
 
     </main>

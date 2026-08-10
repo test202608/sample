@@ -2,11 +2,8 @@ export default function Proposal1() {
   return (
     <main style={{ padding: "40px", fontFamily: "sans-serif", lineHeight: "1.8" }}>
 
-      {/* 上部：トップページに戻る */}
       <div style={{ marginBottom: "20px" }}>
-        <a href="/" style={{ color: "#0066cc", fontSize: "18px" }}>
-          ← トップページに戻る
-        </a>
+        <a href="/" style={{ color: "#0066cc", fontSize: "18px" }}>← トップページに戻る</a>
       </div>
       
       <h1 style={{ fontSize: "28px", marginBottom: "30px" }}>
@@ -44,10 +41,8 @@ export default function Proposal1() {
           border: "1px solid #ccc",
           boxShadow: "0 4px 10px rgba(0,0,0,0.08)"
         }}>
-
           <div style={{ display: "flex" }}>
 
-            {/* 左メニュー */}
             <div style={{
               width: "22%",
               background: "#ffffff",
@@ -63,8 +58,6 @@ export default function Proposal1() {
                 <li>・メッセージ配信</li>
                 <li>・リッチメニュー</li>
                 <li>・設定</li>
-
-                {/* 新規追加メニュー（NEW） */}
                 <li style={{
                   marginTop: "20px",
                   padding: "10px",
@@ -79,7 +72,6 @@ export default function Proposal1() {
               </ul>
             </div>
 
-            {/* 右側：診断画面 */}
             <div style={{
               flexGrow: 1,
               background: "#ffffff",
@@ -91,12 +83,7 @@ export default function Proposal1() {
                 LINE連携診断（UIイメージ）
               </h3>
 
-              {/* 診断ボタン群 */}
-              <div style={{
-                display: "flex",
-                gap: "15px",
-                marginBottom: "25px"
-              }}>
+              <div style={{ display: "flex", gap: "15px", marginBottom: "25px" }}>
                 <button style={{
                   padding: "12px 20px",
                   background: "#4a90e2",
@@ -125,7 +112,6 @@ export default function Proposal1() {
                 }}>内部設定診断</button>
               </div>
 
-              {/* 診断結果表示エリア */}
               <div style={{
                 background: "#f9fafc",
                 border: "1px solid #ccc",
@@ -133,7 +119,6 @@ export default function Proposal1() {
                 padding: "20px"
               }}>
                 <h4 style={{ fontSize: "16px", marginBottom: "15px" }}>診断結果</h4>
-
                 <div style={{ lineHeight: "2" }}>
                   <div style={{ color: "green" }}>✔ LINEとの接続は正常です</div>
                   <div style={{ color: "green" }}>✔ LINE公式アカウントとの連携設定は問題ありません</div>
@@ -161,52 +146,86 @@ export default function Proposal1() {
   ↓
 診断画面が開く
   ↓
-ユーザーがいずれかの診断ボタン
-（Webhook診断 / Messaging API診断 / 内部設定診断）を選択
+ユーザーが診断ボタンを選択
   ↓
-選択した診断処理を実行
+診断処理を実行
   ↓
 診断結果を画面に表示
 `}
         </pre>
       </section>
 
-      {/* 5. 工数（セクション名は絶対固定） */}
+      {/* 5. 工数（作業内容と利用技術を分離） */}
       <section style={{ marginBottom: "60px" }}>
         <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>5. 工数</h2>
-        <ul>
-          <li>既存コード理解：5〜7人日</li>
-          <li>診断ロジック実装（PHP）：6〜8人日</li>
-          <li>UI作成（HTML/CSS/JavaScript）：1〜2人日</li>
-          <li>テスト：2〜3人日</li>
-        </ul>
+
+        <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "18px" }}>
+          <thead>
+            <tr style={{ backgroundColor: "#2E7D32", color: "white" }}>
+              <th style={{ padding: "10px", textAlign: "left" }}>作業内容</th>
+              <th style={{ padding: "10px", textAlign: "left" }}>利用技術</th>
+              <th style={{ padding: "10px", textAlign: "left" }}>工数</th>
+              <th style={{ padding: "10px", textAlign: "left" }}>根拠</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style={{ backgroundColor: "#E8F5E9" }}>
+              <td style={{ padding: "10px" }}>既存コード理解</td>
+              <td style={{ padding: "10px" }}>PHP / JavaScript / HTML / CSS / jQuery</td>
+              <td style={{ padding: "10px" }}>5〜7人日</td>
+              <td style={{ padding: "10px" }}>
+                LINE連携・Webhook・Messaging API・内部設定の4領域を横断して調査する必要があるため。
+              </td>
+            </tr>
+            <tr style={{ backgroundColor: "#F1F8E9" }}>
+              <td style={{ padding: "10px" }}>診断ロジック実装</td>
+              <td style={{ padding: "10px" }}>PHP / JSON処理 / API通信（HTTP）</td>
+              <td style={{ padding: "10px" }}>6〜8人日</td>
+              <td style={{ padding: "10px" }}>
+                API応答判定・内部設定チェック・エラー分類ロジックを各診断項目ごとに実装するため。
+              </td>
+            </tr>
+            <tr style={{ backgroundColor: "#E8F5E9" }}>
+              <td style={{ padding: "10px" }}>UI作成</td>
+              <td style={{ padding: "10px" }}>HTML / CSS / JavaScript / jQuery / Bootstrap / LME-UI</td>
+              <td style={{ padding: "10px" }}>1〜2人日</td>
+              <td style={{ padding: "10px" }}>
+                診断ボタン・結果表示エリア・警告表示など新規UIコンポーネントを追加するため。
+              </td>
+            </tr>
+            <tr style={{ backgroundColor: "#F1F8E9" }}>
+              <td style={{ padding: "10px" }}>テスト</td>
+              <td style={{ padding: "10px" }}>PHP / API応答検証 / UIテスト</td>
+              <td style={{ padding: "10px" }}>2〜3人日</td>
+              <td style={{ padding: "10px" }}>
+                正常系・異常系・設定不一致・API遅延など複数パターンの検証が必要なため。
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
         <p style={{ marginTop: "10px", fontWeight: "bold" }}>
           ■ 合計：14〜20人日（リスク工数込み）
         </p>
       </section>
 
-      {/* 6. 実現可能性 */}
       <section style={{ marginBottom: "60px" }}>
         <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>6. 実現可能性</h2>
         <p>既存APIと内部設定情報を利用するため、技術的に実現可能です。</p>
       </section>
 
-      {/* 7. 既存機能との整合性 */}
       <section style={{ marginBottom: "60px" }}>
         <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>7. 既存機能との整合性</h2>
-        <p>初期設定ウィザードの“設定後の弱点”を補完する機能であり、整合性が高いです。</p>
+        <p>初期設定ウィザードの弱点を補完する機能であり、整合性が高いです。</p>
       </section>
 
-      {/* 8. 優先順位 */}
       <section style={{ marginBottom: "60px" }}>
         <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>8. 優先順位</h2>
         <p>
-          初期設定ミスの可視化により、ユーザーの自己解決率が向上し、  
-          結果として問い合わせ削減につながる可能性があります。
+          初期設定ミスの可視化により、ユーザーの自己解決率が向上し、問い合わせ削減につながる可能性があります。
         </p>
       </section>
 
-      {/* 9. 実装時の確認事項 */}
       <section style={{ marginBottom: "60px" }}>
         <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>9. 実装時の確認事項</h2>
         <ul>
@@ -217,11 +236,8 @@ export default function Proposal1() {
         </ul>
       </section>
 
-      {/* 下部：トップページに戻る */}
       <div style={{ marginTop: "40px" }}>
-        <a href="/" style={{ color: "#0066cc", fontSize: "18px" }}>
-          ← トップページに戻る
-        </a>
+        <a href="/" style={{ color: "#0066cc", fontSize: "18px" }}>← トップページに戻る</a>
       </div>
 
     </main>

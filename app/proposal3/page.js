@@ -2,11 +2,8 @@ export default function Proposal3() {
   return (
     <main style={{ padding: "40px", fontFamily: "sans-serif", lineHeight: "1.8" }}>
 
-      {/* 上部：トップページに戻る */}
       <div style={{ marginBottom: "20px" }}>
-        <a href="/" style={{ color: "#0066cc", fontSize: "18px" }}>
-          ← トップページに戻る
-        </a>
+        <a href="/" style={{ color: "#0066cc", fontSize: "18px" }}>← トップページに戻る</a>
       </div>
 
       <h1 style={{ fontSize: "28px", marginBottom: "30px" }}>
@@ -44,10 +41,8 @@ export default function Proposal3() {
           border: "1px solid #ccc",
           boxShadow: "0 4px 10px rgba(0,0,0,0.08)"
         }}>
-
           <div style={{ display: "flex" }}>
 
-            {/* 左メニュー */}
             <div style={{
               width: "22%",
               background: "#ffffff",
@@ -66,7 +61,6 @@ export default function Proposal3() {
               </ul>
             </div>
 
-            {/* 右側：リッチメニュー改善UI */}
             <div style={{
               flexGrow: 1,
               background: "#ffffff",
@@ -78,7 +72,6 @@ export default function Proposal3() {
                 リッチメニュー編集（UIイメージ）
               </h3>
 
-              {/* ボタン配置プレビュー */}
               <div style={{
                 background: "#f9fafc",
                 border: "1px solid #ccc",
@@ -99,7 +92,6 @@ export default function Proposal3() {
                 </div>
               </div>
 
-              {/* 編集項目 */}
               <div style={{
                 background: "#f9fafc",
                 border: "1px solid #ccc",
@@ -143,15 +135,55 @@ export default function Proposal3() {
         </pre>
       </section>
 
-      {/* 5. 工数 */}
+      {/* 5. 工数（作業内容と利用技術を分離） */}
       <section style={{ marginBottom: "60px" }}>
         <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>5. 工数</h2>
-        <ul>
-          <li>既存UI構造の理解：2〜3人日</li>
-          <li>新UI導線の設計：2〜3人日</li>
-          <li>UI実装（HTML/CSS/JavaScript）：3〜5人日</li>
-          <li>テスト：2〜3人日</li>
-        </ul>
+
+        <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "18px" }}>
+          <thead>
+            <tr style={{ backgroundColor: "#2E7D32", color: "white" }}>
+              <th style={{ padding: "10px", textAlign: "left" }}>作業内容</th>
+              <th style={{ padding: "10px", textAlign: "left" }}>利用技術</th>
+              <th style={{ padding: "10px", textAlign: "left" }}>工数</th>
+              <th style={{ padding: "10px", textAlign: "left" }}>根拠</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style={{ backgroundColor: "#E8F5E9" }}>
+              <td style={{ padding: "10px" }}>既存UI構造の理解</td>
+              <td style={{ padding: "10px" }}>HTML / CSS / JavaScript / jQuery / Bootstrap / LME-UI</td>
+              <td style={{ padding: "10px" }}>2〜3人日</td>
+              <td style={{ padding: "10px" }}>
+                リッチメニュー編集画面の既存導線・UI構造を把握する必要があるため。
+              </td>
+            </tr>
+            <tr style={{ backgroundColor: "#F1F8E9" }}>
+              <td style={{ padding: "10px" }}>新UI導線の設計</td>
+              <td style={{ padding: "10px" }}>HTML / CSS / JavaScript / jQuery / Bootstrap / LME-UI</td>
+              <td style={{ padding: "10px" }}>2〜3人日</td>
+              <td style={{ padding: "10px" }}>
+                ボタン配置・編集項目・即時反映など新規導線を設計するため。
+              </td>
+            </tr>
+            <tr style={{ backgroundColor: "#E8F5E9" }}>
+              <td style={{ padding: "10px" }}>UI実装</td>
+              <td style={{ padding: "10px" }}>HTML / CSS / JavaScript / jQuery / Bootstrap / LME-UI</td>
+              <td style={{ padding: "10px" }}>3〜5人日</td>
+              <td style={{ padding: "10px" }}>
+                プレビューUI・編集項目UI・即時反映ロジックなど複数コンポーネントを実装するため。
+              </td>
+            </tr>
+            <tr style={{ backgroundColor: "#F1F8E9" }}>
+              <td style={{ padding: "10px" }}>テスト</td>
+              <td style={{ padding: "10px" }}>PHP / UIテスト / API応答検証</td>
+              <td style={{ padding: "10px" }}>2〜3人日</td>
+              <td style={{ padding: "10px" }}>
+                UI反映タイミング・編集内容保存・複数メニュー切替など複数パターンの検証が必要なため。
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
         <p style={{ marginTop: "10px", fontWeight: "bold" }}>
           ■ 合計：9〜14人日（リスク工数込み）
         </p>
@@ -189,11 +221,8 @@ export default function Proposal3() {
         </ul>
       </section>
 
-      {/* 下部：トップページに戻る */}
       <div style={{ marginTop: "40px" }}>
-        <a href="/" style={{ color: "#0066cc", fontSize: "18px" }}>
-          ← トップページに戻る
-        </a>
+        <a href="/" style={{ color: "#0066cc", fontSize: "18px" }}>← トップページに戻る</a>
       </div>
 
     </main>

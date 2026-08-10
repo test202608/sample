@@ -1,7 +1,7 @@
 export default function Home() {
   return (
     <main style={{ padding: "40px", fontFamily: "sans-serif", lineHeight: "1.8" }}>
-      
+
       {/* タイトル（ロゴ＋テキスト） */}
       <div style={{ display: "flex", alignItems: "center", marginBottom: "20px" }}>
         <img 
@@ -75,6 +75,15 @@ export default function Home() {
             </tr>
           </tbody>
         </table>
+      </section>
+
+      {/* 注意文（サブタイトル付き・小さめの文字） */}
+      <section style={{ marginTop: "60px" }}>
+        <h2 style={{ fontSize: "16px", marginBottom: "10px", color: "#444" }}>ご注意</h2>
+        <p style={{ fontSize: "14px", color: "#555", lineHeight: "1.8" }}>
+          本改善案はアイデアレベルであり、机上検討では実現可能と判断しておりますが、<br />
+          実証検証（PoC検証）を実施したものではありませんので、実現の保証は致し兼ねます。
+        </p>
       </section>
 
     </main>
