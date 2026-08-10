@@ -69,7 +69,7 @@ export default function Proposal3() {
               flexGrow: 1,
               background: "#ffffff",
               borderRadius: "8px",
-              border: "1px solid #ddd",
+              border: "1px solid "#ddd",
               padding: "25px"
             }}>
               <h3 style={{ fontSize: "18px", marginBottom: "20px" }}>
@@ -172,9 +172,9 @@ export default function Proposal3() {
               <td style={{ padding: "10px" }}>1</td>
               <td style={{ padding: "10px" }}>既存ステップ配信設定APIの確認</td>
               <td style={{ padding: "10px" }}>PHP / JavaScript / API</td>
-              <td style={{ padding: "10px" }}>0.5〜1人日</td>
+              <td style={{ padding: "10px" }}>2〜3人日</td>
               <td style={{ padding: "10px" }}>
-                編集画面で使用しているAPIを一覧画面でも利用するため。
+                ステップ配信設定の取得仕様を把握する必要があるため。
               </td>
             </tr>
 
@@ -182,7 +182,7 @@ export default function Proposal3() {
               <td style={{ padding: "10px" }}>2</td>
               <td style={{ padding: "10px" }}>ポップアップUI設計</td>
               <td style={{ padding: "10px" }}>HTML / CSS / JavaScript</td>
-              <td style={{ padding: "10px" }}>1人日</td>
+              <td style={{ padding: "10px" }}>2〜3人日</td>
               <td style={{ padding: "10px" }}>
                 設定内容を視認しやすい形で表示する新規UIが必要なため。
               </td>
@@ -192,7 +192,7 @@ export default function Proposal3() {
               <td style={{ padding: "10px" }}>3</td>
               <td style={{ padding: "10px" }}>マウスオーバーイベント実装</td>
               <td style={{ padding: "10px" }}>JavaScript / jQuery</td>
-              <td style={{ padding: "10px" }}>1人日</td>
+              <td style={{ padding: "10px" }}>2〜3人日</td>
               <td style={{ padding: "10px" }}>
                 一覧画面でのイベント処理とAPI呼び出しを追加するため。
               </td>
@@ -202,7 +202,7 @@ export default function Proposal3() {
               <td style={{ padding: "10px" }}>4</td>
               <td style={{ padding: "10px" }}>テスト</td>
               <td style={{ padding: "10px" }}>UIテスト / API応答確認</td>
-              <td style={{ padding: "10px" }}>1人日</td>
+              <td style={{ padding: "10px" }}>2〜3人日</td>
               <td style={{ padding: "10px" }}>
                 マウスオーバー時の表示・非表示、API応答の整合性を確認するため。
               </td>
@@ -212,8 +212,8 @@ export default function Proposal3() {
               <td style={{ padding: "10px" }}>合計</td>
               <td style={{ padding: "10px" }}>ー</td>
               <td style={{ padding: "10px" }}>ー</td>
-              <td style={{ padding: "10px" }}>3.5〜4人日</td>
-              <td style={{ padding: "10px" }}>UI改善のみのため低コストで実現可能</td>
+              <td style={{ padding: "10px" }}>8〜12人日</td>
+              <td style={{ padding: "10px" }}>エルメの作業未経験者を想定したリスクを加味</td>
             </tr>
 
           </tbody>
@@ -239,7 +239,8 @@ export default function Proposal3() {
       <section style={{ marginBottom: "60px" }}>
         <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>8. 優先順位</h2>
         <p>
-          ステップ配信は運用頻度が高く、設定内容の確認ニーズが強いため優先度は高い。
+          一覧画面で設定内容が確認できず、編集画面への往復操作が発生しているため、
+          UI構造上の課題として優先度は高い。
         </p>
       </section>
 
@@ -248,7 +249,7 @@ export default function Proposal3() {
         <ul>
           <li>APIレスポンスの項目名と表示項目の整合性</li>
           <li>マウスオーバー時の表示遅延の最小化</li>
-          <li>スマホ版でのタップ時の表示仕様</li>
+          <li>スマホ版では hover が存在しないため、管理名タップ時に行内へ設定内容を展開する仕様を採用する</li>
           <li>既存ステップ配信との互換性</li>
         </ul>
       </section>
