@@ -25,7 +25,7 @@ export default function Proposal1() {
       <section style={{ marginBottom: "60px" }}>
         <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>2. 改善内容</h2>
         <p>
-          LINE連携・Webhook・Messaging API・内部設定を自動診断し、問題箇所を画面上に表示する機能を追加する。
+          LINE連携・Webhook・Messaging API・内部設定を自動診断し、問題箇所を画面上に表示する機能を追加する。<br />
           これにより、初期設定の品質を担保し、設定不備による運用停止を未然に防止する。
         </p>
       </section>
@@ -142,7 +142,7 @@ export default function Proposal1() {
           border: "1px solid #ddd",
           fontSize: "14px"
         }}>
-{`LINE連携診断（NEW）をクリック
+{`LINE連携診断（NEW）をクリックする
   ↓
 診断画面が開く
   ↓
@@ -150,16 +150,15 @@ export default function Proposal1() {
   ↓
 診断処理を実行する
   ↓
-診断結果を画面に表示する
-`}
+診断結果を画面に表示する`}
         </pre>
       </section>
 
-      {/* 5. 工数（合計行の文言修正済み） */}
+      {/* 5. 工数（フォント14px＋行間1.6） */}
       <section style={{ marginBottom: "60px" }}>
         <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>5. 工数</h2>
 
-        <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "18px" }}>
+        <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "14px", lineHeight: "1.6" }}>
           <thead>
             <tr style={{ backgroundColor: "#2E7D32", color: "white" }}>
               <th style={{ padding: "10px", textAlign: "left" }}>項番</th>
@@ -170,41 +169,37 @@ export default function Proposal1() {
             </tr>
           </thead>
           <tbody>
+
             <tr style={{ backgroundColor: "#E8F5E9" }}>
               <td style={{ padding: "10px" }}>1</td>
               <td style={{ padding: "10px" }}>既存コード理解</td>
               <td style={{ padding: "10px" }}>PHP / JavaScript / HTML / CSS / jQuery</td>
               <td style={{ padding: "10px" }}>5〜7人日</td>
-              <td style={{ padding: "10px" }}>
-                LINE連携・Webhook・Messaging API・内部設定の4領域を横断して調査する必要があるためである。
-              </td>
+              <td style={{ padding: "10px" }}>4領域を横断して調査する必要があるためである。</td>
             </tr>
+
             <tr style={{ backgroundColor: "#F1F8E9" }}>
               <td style={{ padding: "10px" }}>2</td>
               <td style={{ padding: "10px" }}>診断ロジック実装</td>
-              <td style={{ padding: "10px" }}>PHP / JSON処理 / API通信（HTTP）</td>
+              <td style={{ padding: "10px" }}>PHP / JSON処理 / API通信</td>
               <td style={{ padding: "10px" }}>6〜8人日</td>
-              <td style={{ padding: "10px" }}>
-                API応答判定・内部設定チェック・エラー分類ロジックを各診断項目ごとに実装する必要があるためである。
-              </td>
+              <td style={{ padding: "10px" }}>各診断項目ごとにロジックを実装する必要があるためである。</td>
             </tr>
+
             <tr style={{ backgroundColor: "#E8F5E9" }}>
               <td style={{ padding: "10px" }}>3</td>
               <td style={{ padding: "10px" }}>UI作成</td>
-              <td style={{ padding: "10px" }}>HTML / CSS / JavaScript / jQuery / Bootstrap / LME-UI</td>
+              <td style={{ padding: "10px" }}>HTML / CSS / JavaScript / Bootstrap</td>
               <td style={{ padding: "10px" }}>1〜2人日</td>
-              <td style={{ padding: "10px" }}>
-                診断ボタン・結果表示エリア・警告表示など新規UIコンポーネントを追加する必要があるためである。
-              </td>
+              <td style={{ padding: "10px" }}>新規UIコンポーネントを追加する必要があるためである。</td>
             </tr>
+
             <tr style={{ backgroundColor: "#F1F8E9" }}>
               <td style={{ padding: "10px" }}>4</td>
               <td style={{ padding: "10px" }}>テスト</td>
-              <td style={{ padding: "10px" }}>PHP / API応答検証 / UIテスト</td>
+              <td style={{ padding: "10px" }}>PHP / UIテスト</td>
               <td style={{ padding: "10px" }}>2〜3人日</td>
-              <td style={{ padding: "10px" }}>
-                正常系・異常系・設定不一致・API遅延など複数パターンの検証が必要であるためである。
-              </td>
+              <td style={{ padding: "10px" }}>複数パターンの検証が必要であるためである。</td>
             </tr>
 
             <tr style={{ backgroundColor: "#C8E6C9", fontWeight: "bold" }}>
@@ -212,14 +207,14 @@ export default function Proposal1() {
               <td style={{ padding: "10px" }}>ー</td>
               <td style={{ padding: "10px" }}>ー</td>
               <td style={{ padding: "10px" }}>14〜20人日</td>
-              <td style={{ padding: "10px" }}>エルメの作業未経験者を想定したリスクを加味する。</td>
+              <td style={{ padding: "10px" }}>未経験者を想定したリスクを加味する。</td>
             </tr>
+
           </tbody>
         </table>
-
       </section>
 
-      {/* 6〜9（既存のまま） */}
+      {/* 6〜9 */}
       <section style={{ marginBottom: "60px" }}>
         <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>6. 実現可能性</h2>
         <p>

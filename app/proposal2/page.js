@@ -134,7 +134,7 @@ export default function Proposal2() {
           padding: "20px",
           borderRadius: "8px",
           border: "1px solid #ddd",
-          fontSize: "14px",
+          fontSize: "14px"
         }}>
 {`送信前チェックを実行する
   ↓
@@ -148,11 +148,11 @@ export default function Proposal2() {
         </pre>
       </section>
 
-      {/* 5. 工数 */}
+      {/* 5. 工数（フォント14px＋行間1.6） */}
       <section style={{ marginBottom: "60px" }}>
         <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>5. 工数</h2>
 
-        <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "18px" }}>
+        <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "14px", lineHeight: "1.6" }}>
           <thead>
             <tr style={{ backgroundColor: "#2E7D32", color: "white" }}>
               <th style={{ padding: "10px", textAlign: "left" }}>項番</th>
@@ -169,9 +169,7 @@ export default function Proposal2() {
               <td style={{ padding: "10px" }}>既存配信ロジックの解析</td>
               <td style={{ padding: "10px" }}>PHP / JavaScript / API</td>
               <td style={{ padding: "10px" }}>2〜3人日</td>
-              <td style={{ padding: "10px" }}>
-                誤配信につながる設定項目を抽出する必要があるためである。
-              </td>
+              <td style={{ padding: "10px" }}>誤配信につながる設定項目を抽出する必要があるためである。</td>
             </tr>
 
             <tr style={{ backgroundColor: "#F1F8E9" }}>
@@ -179,9 +177,7 @@ export default function Proposal2() {
               <td style={{ padding: "10px" }}>誤配信防止チェックロジックの設計</td>
               <td style={{ padding: "10px" }}>PHP / JavaScript</td>
               <td style={{ padding: "10px" }}>2〜3人日</td>
-              <td style={{ padding: "10px" }}>
-                配信先・送信者名・配信日時などの整合性チェックを設計する必要があるためである。
-              </td>
+              <td style={{ padding: "10px" }}>配信先・送信者名・配信日時などの整合性チェックを設計する必要があるためである。</td>
             </tr>
 
             <tr style={{ backgroundColor: "#E8F5E9" }}>
@@ -189,9 +185,7 @@ export default function Proposal2() {
               <td style={{ padding: "10px" }}>UI実装（チェック結果表示）</td>
               <td style={{ padding: "10px" }}>HTML / CSS / JavaScript</td>
               <td style={{ padding: "10px" }}>2〜3人日</td>
-              <td style={{ padding: "10px" }}>
-                チェック結果を視認しやすく表示する新規UIが必要であるためである。
-              </td>
+              <td style={{ padding: "10px" }}>チェック結果を視認しやすく表示する新規UIが必要であるためである。</td>
             </tr>
 
             <tr style={{ backgroundColor: "#F1F8E9" }}>
@@ -199,9 +193,7 @@ export default function Proposal2() {
               <td style={{ padding: "10px" }}>テスト</td>
               <td style={{ padding: "10px" }}>UIテスト / ロジック検証</td>
               <td style={{ padding: "10px" }}>2〜3人日</td>
-              <td style={{ padding: "10px" }}>
-                誤配信リスク抽出ロジックの複数パターンを検証する必要があるためである。
-              </td>
+              <td style={{ padding: "10px" }}>誤配信リスク抽出ロジックの複数パターンを検証する必要があるためである。</td>
             </tr>
 
             <tr style={{ backgroundColor: "#C8E6C9", fontWeight: "bold" }}>
@@ -209,7 +201,7 @@ export default function Proposal2() {
               <td style={{ padding: "10px" }}>ー</td>
               <td style={{ padding: "10px" }}>ー</td>
               <td style={{ padding: "10px" }}>8〜12人日</td>
-              <td style={{ padding: "10px" }}>エルメ未経験者を想定したリスクを加味する。</td>
+              <td style={{ padding: "10px" }}>未経験者を想定したリスクを加味する。</td>
             </tr>
 
           </tbody>

@@ -76,7 +76,6 @@ export default function Proposal3() {
                 ステップ配信一覧（UIイメージ）
               </h3>
 
-              {/* 一覧画面 */}
               <table style={{
                 width: "100%",
                 borderCollapse: "collapse",
@@ -102,7 +101,6 @@ export default function Proposal3() {
                 </tbody>
               </table>
 
-              {/* ポップアップ */}
               <div style={{
                 background: "#fff",
                 border: "1px solid #ddd",
@@ -136,7 +134,7 @@ export default function Proposal3() {
           padding: "20px",
           borderRadius: "8px",
           border: "1px solid #ddd",
-          fontSize: "14px",
+          fontSize: "14px"
         }}>
 {`ステップ配信一覧を表示する
   ↓
@@ -152,11 +150,11 @@ export default function Proposal3() {
         </pre>
       </section>
 
-      {/* 5. 工数 */}
+      {/* 5. 工数（フォント14px＋行間1.6） */}
       <section style={{ marginBottom: "60px" }}>
         <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>5. 工数</h2>
 
-        <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "18px" }}>
+        <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "14px", lineHeight: "1.6" }}>
           <thead>
             <tr style={{ backgroundColor: "#2E7D32", color: "white" }}>
               <th style={{ padding: "10px", textAlign: "left" }}>項番</th>
@@ -173,9 +171,7 @@ export default function Proposal3() {
               <td style={{ padding: "10px" }}>既存ステップ配信設定APIの確認</td>
               <td style={{ padding: "10px" }}>PHP / JavaScript / API</td>
               <td style={{ padding: "10px" }}>2〜3人日</td>
-              <td style={{ padding: "10px" }}>
-                ステップ配信設定の取得仕様を把握する必要があるためである。
-              </td>
+              <td style={{ padding: "10px" }}>ステップ配信設定の取得仕様を把握する必要があるためである。</td>
             </tr>
 
             <tr style={{ backgroundColor: "#F1F8E9" }}>
@@ -183,9 +179,7 @@ export default function Proposal3() {
               <td style={{ padding: "10px" }}>ポップアップUI設計</td>
               <td style={{ padding: "10px" }}>HTML / CSS / JavaScript</td>
               <td style={{ padding: "10px" }}>2〜3人日</td>
-              <td style={{ padding: "10px" }}>
-                設定内容を視認しやすい形で表示する新規UIが必要であるためである。
-              </td>
+              <td style={{ padding: "10px" }}>設定内容を視認しやすい形で表示する新規UIが必要であるためである。</td>
             </tr>
 
             <tr style={{ backgroundColor: "#E8F5E9" }}>
@@ -193,9 +187,7 @@ export default function Proposal3() {
               <td style={{ padding: "10px" }}>マウスオーバーイベント実装</td>
               <td style={{ padding: "10px" }}>JavaScript / jQuery</td>
               <td style={{ padding: "10px" }}>2〜3人日</td>
-              <td style={{ padding: "10px" }}>
-                一覧画面でのイベント処理とAPI呼び出しを追加する必要があるためである。
-              </td>
+              <td style={{ padding: "10px" }}>一覧画面でのイベント処理とAPI呼び出しを追加する必要があるためである。</td>
             </tr>
 
             <tr style={{ backgroundColor: "#F1F8E9" }}>
@@ -203,9 +195,7 @@ export default function Proposal3() {
               <td style={{ padding: "10px" }}>テスト</td>
               <td style={{ padding: "10px" }}>UIテスト / API応答確認</td>
               <td style={{ padding: "10px" }}>2〜3人日</td>
-              <td style={{ padding: "10px" }}>
-                マウスオーバー時の表示・非表示、API応答の整合性を確認する必要があるためである。
-              </td>
+              <td style={{ padding: "10px" }}>マウスオーバー時の表示・非表示、API応答の整合性を確認する必要があるためである。</td>
             </tr>
 
             <tr style={{ backgroundColor: "#C8E6C9", fontWeight: "bold" }}>
@@ -213,7 +203,7 @@ export default function Proposal3() {
               <td style={{ padding: "10px" }}>ー</td>
               <td style={{ padding: "10px" }}>ー</td>
               <td style={{ padding: "10px" }}>8〜12人日</td>
-              <td style={{ padding: "10px" }}>エルメ未経験者を想定したリスクを加味する。</td>
+              <td style={{ padding: "10px" }}>未経験者を想定したリスクを加味する。</td>
             </tr>
 
           </tbody>
