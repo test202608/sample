@@ -25,7 +25,7 @@ export default function Proposal3() {
       <section style={{ marginBottom: "60px" }}>
         <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>2. 改善内容</h2>
         <p>
-          ステップ配信一覧の「管理名」にマウスオーバーすると、設定内容の概要（配信タイミング・ステップ数・条件分岐・タグ付与・最終更新者など）が
+          ステップ配信一覧の「管理名」にマウスオーバーすると、設定内容の概要（配信タイミング・ステップ数・条件分岐・タグ付与など）が
           ポップアップで表示される機能を追加します。
           編集画面に遷移せずに一覧画面だけで設定内容を俯瞰できるため、運用効率が大幅に向上します。
         </p>
@@ -55,11 +55,11 @@ export default function Proposal3() {
             }}>
               <h3 style={{ fontSize: "16px", marginBottom: "15px" }}>メニュー</h3>
               <ul style={{ listStyle: "none", paddingLeft: "0", lineHeight: "2" }}>
-                <li>・ダッシュボード</li>
-                <li>・チャット</li>
+                <li>・1:1チャット</li>
                 <li>・メッセージ配信</li>
                 <li>・ステップ配信（改善）</li>
-                <li>・タグ管理</li>
+                <li>・自動応答</li>
+                <li>・データ管理</li>
                 <li>・設定</li>
               </ul>
             </div>
@@ -76,39 +76,51 @@ export default function Proposal3() {
                 ステップ配信一覧（UIイメージ）
               </h3>
 
-              {/* 一覧画面 */}
+              {/* 一覧画面（現物に寄せたモデル） */}
+              <table style={{
+                width: "100%",
+                borderCollapse: "collapse",
+                marginBottom: "25px",
+                fontSize: "15px"
+              }}>
+                <thead>
+                  <tr style={{ background: "#f2f2f2" }}>
+                    <th style={{ padding: "10px", border: "1px solid #ddd" }}>管理名</th>
+                    <th style={{ padding: "10px", border: "1px solid #ddd" }}>開始条件の友だち</th>
+                    <th style={{ padding: "10px", border: "1px solid #ddd" }}>終了済の友だち</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style={{ padding: "10px", border: "1px solid #ddd" }}>
+                      新規ユーザー育成フロー
+                      <span style={{ marginLeft: "10px", color: "#4a90e2" }}>（マウスオーバー）</span>
+                    </td>
+                    <td style={{ padding: "10px", border: "1px solid #ddd" }}>0人</td>
+                    <td style={{ padding: "10px", border: "1px solid #ddd" }}>0人</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              {/* ポップアップ（現物の設定項目に即した内容） */}
               <div style={{
-                background: "#f9fafc",
-                border: "1px solid #ccc",
+                background: "#fff",
+                border: "1px solid #ddd",
                 borderRadius: "8px",
                 padding: "20px",
-                marginBottom: "25px"
+                width: "60%",
+                boxShadow: "0 4px 10px rgba(0,0,0,0.1)"
               }}>
-                <h4 style={{ fontSize: "16px", marginBottom: "15px" }}>ステップ配信一覧</h4>
-
-                <div style={{ marginBottom: "20px" }}>
-                  <strong>管理名：新規ユーザー育成フロー</strong>
-                  <span style={{ marginLeft: "10px", color: "#4a90e2" }}>（マウスオーバー）</span>
-                </div>
-
-                {/* ポップアップ */}
-                <div style={{
-                  background: "#fff",
-                  border: "1px solid #ddd",
-                  borderRadius: "8px",
-                  padding: "20px",
-                  width: "60%",
-                  boxShadow: "0 4px 10px rgba(0,0,0,0.1)"
-                }}>
-                  <h4 style={{ fontSize: "16px", marginBottom: "10px" }}>設定内容プレビュー</h4>
-                  <div style={{ lineHeight: "1.8", fontSize: "14px" }}>
-                    <div>・ステップ数：5</div>
-                    <div>・配信タイミング：友だち追加後 1日目</div>
-                    <div>・ステップ間隔：1日 → 2日 → 3日</div>
-                    <div>・条件分岐：あり（タグ：購入者）</div>
-                    <div>・タグ付与：ステップ3で「見込み客」付与</div>
-                    <div>・最終更新：2026/08/10 11:32（由二）</div>
-                  </div>
+                <h4 style={{ fontSize: "16px", marginBottom: "10px" }}>設定内容プレビュー</h4>
+                <div style={{ lineHeight: "1.8", fontSize: "14px" }}>
+                  <div>・配信タイミング：ステップ開始後 1日後 10:00</div>
+                  <div>・ステップ数：3</div>
+                  <div>・ステップ1：案内メッセージ（即時）</div>
+                  <div>・ステップ2：フォローアップ（2日後）</div>
+                  <div>・ステップ3：クロージング（3日後）</div>
+                  <div>・条件分岐：タグ「購入者」が付与されている場合 → 別ルートへ</div>
+                  <div>・タグ付与：ステップ2完了時に「見込み客」を付与</div>
+                  <div>・最終更新：2026/08/01</div>
                 </div>
               </div>
 
