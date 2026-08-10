@@ -17,7 +17,7 @@ export default function Proposal3() {
           <li>ステップ配信一覧では管理名・進行状況のみが表示され、設定内容（配信タイミング・指定方法・登録可能数など）が確認できない（UI/UX）</li>
           <li>設定内容を確認するために編集画面へ遷移する必要があり、往復操作が多く運用効率が低下する（運用面）</li>
           <li>ステップ配信が複数存在する場合、設定内容の把握に時間がかかり、誤認や設定ミスの原因となる（運用面）</li>
-          <li>一覧画面が「俯瞰」できる構造になっておらず、ステップ配信の全体像を把握しづらい（UI/UX）</li>
+          <li>一覧画面が俯瞰できる構造になっておらず、ステップ配信の全体像を把握しづらい（UI/UX）</li>
         </ul>
       </section>
 
@@ -25,9 +25,9 @@ export default function Proposal3() {
       <section style={{ marginBottom: "60px" }}>
         <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>2. 改善内容</h2>
         <p>
-          ステップ配信一覧の「管理名」にマウスオーバーすると、設定内容の概要（配信タイミング・指定方法・経過時間指定・登録可能数など）が
-          ポップアップで表示される機能を追加します。
-          編集画面に遷移せずに一覧画面だけで設定内容を俯瞰できるため、運用効率が大幅に向上します。
+          ステップ配信一覧の管理名にマウスオーバーすると、設定内容の概要（配信タイミング・指定方法・経過時間指定・登録可能数など）が
+          ポップアップで表示される機能を追加する。<br />
+          編集画面へ遷移せずに一覧画面のみで設定内容を俯瞰できるようになり、運用効率が向上する。
         </p>
       </section>
 
@@ -76,7 +76,7 @@ export default function Proposal3() {
                 ステップ配信一覧（UIイメージ）
               </h3>
 
-              {/* 一覧画面（現物に寄せたモデル） */}
+              {/* 一覧画面 */}
               <table style={{
                 width: "100%",
                 borderCollapse: "collapse",
@@ -102,7 +102,7 @@ export default function Proposal3() {
                 </tbody>
               </table>
 
-              {/* ポップアップ（キャプチャ準拠） */}
+              {/* ポップアップ */}
               <div style={{
                 background: "#fff",
                 border: "1px solid #ddd",
@@ -138,17 +138,17 @@ export default function Proposal3() {
           border: "1px solid #ddd",
           fontSize: "14px",
         }}>
-{`ステップ配信一覧を表示
+{`ステップ配信一覧を表示する
   ↓
-管理名にマウスオーバー
+管理名にマウスオーバーする
   ↓
-該当ステップ配信IDを取得
+該当ステップ配信IDを取得する
   ↓
-既存の「ステップ配信設定取得API」を呼び出し
+既存のステップ配信設定取得APIを呼び出す
   ↓
-設定内容をポップアップとして表示
+設定内容をポップアップとして表示する
   ↓
-マウスアウトで非表示`}
+マウスアウトで非表示にする`}
         </pre>
       </section>
 
@@ -174,7 +174,7 @@ export default function Proposal3() {
               <td style={{ padding: "10px" }}>PHP / JavaScript / API</td>
               <td style={{ padding: "10px" }}>2〜3人日</td>
               <td style={{ padding: "10px" }}>
-                ステップ配信設定の取得仕様を把握する必要があるため。
+                ステップ配信設定の取得仕様を把握する必要があるためである。
               </td>
             </tr>
 
@@ -184,7 +184,7 @@ export default function Proposal3() {
               <td style={{ padding: "10px" }}>HTML / CSS / JavaScript</td>
               <td style={{ padding: "10px" }}>2〜3人日</td>
               <td style={{ padding: "10px" }}>
-                設定内容を視認しやすい形で表示する新規UIが必要なため。
+                設定内容を視認しやすい形で表示する新規UIが必要であるためである。
               </td>
             </tr>
 
@@ -194,7 +194,7 @@ export default function Proposal3() {
               <td style={{ padding: "10px" }}>JavaScript / jQuery</td>
               <td style={{ padding: "10px" }}>2〜3人日</td>
               <td style={{ padding: "10px" }}>
-                一覧画面でのイベント処理とAPI呼び出しを追加するため。
+                一覧画面でのイベント処理とAPI呼び出しを追加する必要があるためである。
               </td>
             </tr>
 
@@ -204,7 +204,7 @@ export default function Proposal3() {
               <td style={{ padding: "10px" }}>UIテスト / API応答確認</td>
               <td style={{ padding: "10px" }}>2〜3人日</td>
               <td style={{ padding: "10px" }}>
-                マウスオーバー時の表示・非表示、API応答の整合性を確認するため。
+                マウスオーバー時の表示・非表示、API応答の整合性を確認する必要があるためである。
               </td>
             </tr>
 
@@ -213,7 +213,7 @@ export default function Proposal3() {
               <td style={{ padding: "10px" }}>ー</td>
               <td style={{ padding: "10px" }}>ー</td>
               <td style={{ padding: "10px" }}>8〜12人日</td>
-              <td style={{ padding: "10px" }}>エルメの作業未経験者を想定したリスクを加味</td>
+              <td style={{ padding: "10px" }}>エルメ未経験者を想定したリスクを加味する。</td>
             </tr>
 
           </tbody>
@@ -224,23 +224,22 @@ export default function Proposal3() {
       <section style={{ marginBottom: "60px" }}>
         <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>6. 実現可能性</h2>
         <p>
-          編集画面で既に利用しているステップ配信設定取得APIを一覧画面でも再利用できるため、
-          実現可能性は高い。UI改善のみで完結する。
+          編集画面で既に利用しているステップ配信設定取得APIを一覧画面でも再利用できるため、実現可能性は高い。
+          UI改善のみで完結する。
         </p>
       </section>
 
       <section style={{ marginBottom: "60px" }}>
         <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>7. 既存機能との整合性</h2>
         <p>
-          既存のステップ配信ロジックを変更せず、一覧画面に情報表示を追加するだけで整合性を保てる。
+          既存のステップ配信ロジックを変更せず、一覧画面に情報表示を追加するだけで整合性を保つ。
         </p>
       </section>
 
       <section style={{ marginBottom: "60px" }}>
         <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>8. 優先順位</h2>
         <p>
-          一覧画面で設定内容が確認できず、編集画面への往復操作が発生しているため、
-          UI構造上の課題として優先度は高い。
+          一覧画面で設定内容が確認できず、編集画面への往復操作が発生しているため、UI構造上の課題として優先度は高い。
         </p>
       </section>
 

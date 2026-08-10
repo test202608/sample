@@ -15,8 +15,8 @@ export default function Home() {
       </div>
 
       <p style={{ fontSize: "18px", marginBottom: "20px" }}>
-        以下に改善案を3点提示します。<br />
-        改善案の番号は、優先順位を表します。
+        以下に改善案を3点提示する。<br />
+        改善案の番号は優先順位を表す。
       </p>
 
       <section style={{ marginBottom: "40px" }}>
@@ -24,15 +24,15 @@ export default function Home() {
         <ul style={{ fontSize: "18px", lineHeight: "1.8" }}>
           <li>
             <strong>改善案①（設定の品質保証）</strong><br />
-            初期設定の成否を左右し、全機能の利用可否に直結するため。
+            初期設定の成否を左右し、全機能の利用可否に直結するためである。
           </li>
           <li>
             <strong>改善案②（運用の安全保証）</strong><br />
-            配信前に誤配信リスクを事前に把握でき、運用の安全性に直結するため。
+            配信前に誤配信リスクを事前に把握でき、運用の安全性に直結するためである。
           </li>
           <li>
             <strong>改善案③（運用効率の向上）</strong><br />
-            一覧画面で設定内容を俯瞰できるようになり、編集画面への往復が不要になるため。
+            一覧画面で設定内容を俯瞰できるようになり、編集画面への往復が不要となるためである。
           </li>
         </ul>
       </section>
@@ -81,8 +81,8 @@ export default function Home() {
       <section style={{ marginTop: "60px" }}>
         <h2 style={{ fontSize: "16px", marginBottom: "10px", color: "#444" }}>ご注意</h2>
         <p style={{ fontSize: "14px", color: "#555", lineHeight: "1.8" }}>
-          本改善案はアイデアレベルであり、机上検討では実現可能と判断しておりますが、<br />
-          実証検証（PoC検証）を実施したものではありませんので、実現の保証は致し兼ねます。
+          本改善案はアイデアレベルであり、机上検討では実現可能と判断しているが、<br />
+          実証検証（PoC検証）を実施したものではないため、実現の保証はできない。
         </p>
       </section>
 

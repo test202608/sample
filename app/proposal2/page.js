@@ -15,9 +15,9 @@ export default function Proposal2() {
         <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>1. 具体的な課題点</h2>
         <ul>
           <li>現状の配信内容確認画面は、人間が自力で見落としなく確認する必要がある（UI/UX）</li>
-          <li>必須項目の未設定は防げるが、誤配信につながる設定はシステムが検知しない（運用面）</li>
-          <li>絞り込み条件未設定（＝全員配信）など、仕様上正常だが誤配信につながる設定が存在する（運用面）</li>
-          <li>配信日時の設定ミスにより、意図せず即時配信されるケースがある（運用面）</li>
+          <li>必須項目の未設定は防止できるが、誤配信につながる設定はシステムが検知しない（運用面）</li>
+          <li>絞り込み条件未設定（＝全員配信）は仕様上正常であるが、誤配信の典型的要因となる（運用面）</li>
+          <li>配信日時の設定ミスにより、意図せず即時配信となるケースが存在する（運用面）</li>
         </ul>
       </section>
 
@@ -25,10 +25,10 @@ export default function Proposal2() {
       <section style={{ marginBottom: "60px" }}>
         <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>2. 改善内容</h2>
         <p>
-          配信開始前に、誤配信につながる設定をシステムが自動抽出し、
-          ユーザーが確認できるように提示する「誤配信防止チェック」機能を追加します。<br />
-          現状の「人間が自力で気づくしかない」構造から、
-          「システムが指摘 → 人間が確認」という安全な構造へ改善します。
+          配信開始前に誤配信につながる設定をシステムが自動抽出し、ユーザーが確認できるように提示する
+          「誤配信防止チェック」機能を追加する。<br />
+          これにより、現状の「人間が自力で気づくしかない」構造から、
+          「システムが指摘し、ユーザーが確認する」構造へ改善し、運用の安全性を高める。
         </p>
       </section>
 
@@ -89,26 +89,26 @@ export default function Proposal2() {
             fontSize: "14px",
             lineHeight: "1.8",
           }}>
-            <p>以下の項目は誤配信につながる可能性があります。内容をご確認ください。</p>
+            <p>以下の項目は誤配信につながる可能性があるため、内容を確認する必要がある。</p>
 
             <div style={{ color: "red" }}>
-              ・配信先が「全員」になっています  
-              <br />　→ 絞り込み条件が設定されていないため、意図しないユーザーに配信される可能性があります。
+              ・配信先が「全員」である  
+              <br />　→ 絞り込み条件が設定されておらず、意図しないユーザーに配信される可能性がある。
             </div>
 
             <div style={{ color: "red", marginTop: "10px" }}>
-              ・送信者名が初期値のままです  
-              <br />　→ 意図しない送信者名で配信される可能性があります。
+              ・送信者名が初期値のままである  
+              <br />　→ 意図しない送信者名で配信される可能性がある。
             </div>
 
             <div style={{ color: "red", marginTop: "10px" }}>
-              ・配信日時が現在時刻と近い時間です  
-              <br />　→ 即時配信となる可能性があります。
+              ・配信日時が現在時刻と近い  
+              <br />　→ 即時配信となる可能性がある。
             </div>
 
             <div style={{ color: "red", marginTop: "10px" }}>
-              ・メッセージ内容が短すぎる／本文が空に近いです  
-              <br />　→ 意図しない内容で配信される可能性があります。
+              ・メッセージ内容が短すぎる、または本文が空に近い  
+              <br />　→ 意図しない内容で配信される可能性がある。
             </div>
 
             <button style={{
@@ -136,15 +136,15 @@ export default function Proposal2() {
           border: "1px solid #ddd",
           fontSize: "14px",
         }}>
-{`送信前チェックを実行
+{`送信前チェックを実行する
   ↓
-誤配信につながる設定を抽出
+誤配信につながる設定を抽出する
   ↓
-チェック結果として画面に提示
+チェック結果として画面に提示する
   ↓
-ユーザーが内容を確認
+ユーザーが内容を確認する
   ↓
-問題なければ配信開始`}
+問題なければ配信を開始する`}
         </pre>
       </section>
 
@@ -170,7 +170,7 @@ export default function Proposal2() {
               <td style={{ padding: "10px" }}>PHP / JavaScript / API</td>
               <td style={{ padding: "10px" }}>2〜3人日</td>
               <td style={{ padding: "10px" }}>
-                誤配信につながる設定項目の抽出が必要なため。
+                誤配信につながる設定項目を抽出する必要があるためである。
               </td>
             </tr>
 
@@ -180,7 +180,7 @@ export default function Proposal2() {
               <td style={{ padding: "10px" }}>PHP / JavaScript</td>
               <td style={{ padding: "10px" }}>2〜3人日</td>
               <td style={{ padding: "10px" }}>
-                配信先・送信者名・配信日時などの整合性チェックが必要なため。
+                配信先・送信者名・配信日時などの整合性チェックを設計する必要があるためである。
               </td>
             </tr>
 
@@ -190,7 +190,7 @@ export default function Proposal2() {
               <td style={{ padding: "10px" }}>HTML / CSS / JavaScript</td>
               <td style={{ padding: "10px" }}>2〜3人日</td>
               <td style={{ padding: "10px" }}>
-                チェック結果を視認しやすく表示する新規UIが必要なため。
+                チェック結果を視認しやすく表示する新規UIが必要であるためである。
               </td>
             </tr>
 
@@ -200,7 +200,7 @@ export default function Proposal2() {
               <td style={{ padding: "10px" }}>UIテスト / ロジック検証</td>
               <td style={{ padding: "10px" }}>2〜3人日</td>
               <td style={{ padding: "10px" }}>
-                誤配信リスク抽出ロジックの複数パターン検証が必要なため。
+                誤配信リスク抽出ロジックの複数パターンを検証する必要があるためである。
               </td>
             </tr>
 
@@ -209,7 +209,7 @@ export default function Proposal2() {
               <td style={{ padding: "10px" }}>ー</td>
               <td style={{ padding: "10px" }}>ー</td>
               <td style={{ padding: "10px" }}>8〜12人日</td>
-              <td style={{ padding: "10px" }}>エルメ未経験者を想定したリスクを加味</td>
+              <td style={{ padding: "10px" }}>エルメ未経験者を想定したリスクを加味する。</td>
             </tr>
 
           </tbody>
@@ -220,14 +220,14 @@ export default function Proposal2() {
       <section style={{ marginBottom: "60px" }}>
         <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>6. 実現可能性</h2>
         <p>
-          既存の配信ロジックに誤配信リスク抽出処理を追加するだけで実現可能。UI改善と軽微なロジック追加で完結する。
+          既存の配信ロジックに誤配信リスク抽出処理を追加するだけであり、技術的に実現可能である。
         </p>
       </section>
 
       <section style={{ marginBottom: "60px" }}>
         <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>7. 既存機能との整合性</h2>
         <p>
-          現状の配信内容確認画面を補完する位置づけであり、既存ロジックを破壊しない。整合性は高い。
+          現状の配信内容確認画面を補完する位置づけであり、既存ロジックを破壊せず整合性を保つ。
         </p>
       </section>
 
@@ -242,7 +242,7 @@ export default function Proposal2() {
         <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>9. 実装時の確認事項</h2>
         <ul>
           <li>誤配信リスクとして扱う項目の範囲定義</li>
-          <li>誤検知・過検知を防ぐための条件定義</li>
+          <li>誤検知・過検知を防止する条件定義</li>
           <li>チェック結果の表示方法（視認性・可読性）</li>
           <li>既存配信ロジックとの互換性</li>
         </ul>

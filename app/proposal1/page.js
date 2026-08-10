@@ -16,8 +16,8 @@ export default function Proposal1() {
         <ul>
           <li>初期設定後に「どこが間違っているか分からない」状態が発生する（UI/UX）</li>
           <li>Webhook応答エラーの原因が特定できない（機能面）</li>
-          <li>Messaging APIの設定不一致が画面上で分からない（機能面）</li>
-          <li>内部設定の漏れが気づきにくい（UI/UX）</li>
+          <li>Messaging APIの設定不一致が画面上で把握できない（機能面）</li>
+          <li>内部設定の漏れが気づきにくく、運用開始までの時間が増加する（UI/UX）</li>
         </ul>
       </section>
 
@@ -25,8 +25,8 @@ export default function Proposal1() {
       <section style={{ marginBottom: "60px" }}>
         <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>2. 改善内容</h2>
         <p>
-          LINE連携・Webhook・Messaging API・内部設定を自動診断し、
-          問題箇所を画面上に表示する機能を追加します。
+          LINE連携・Webhook・Messaging API・内部設定を自動診断し、問題箇所を画面上に表示する機能を追加する。
+          これにより、初期設定の品質を担保し、設定不備による運用停止を未然に防止する。
         </p>
       </section>
 
@@ -120,10 +120,10 @@ export default function Proposal1() {
               }}>
                 <h4 style={{ fontSize: "16px", marginBottom: "15px" }}>診断結果</h4>
                 <div style={{ lineHeight: "2" }}>
-                  <div style={{ color: "green" }}>✔ LINEとの接続は正常です</div>
-                  <div style={{ color: "green" }}>✔ LINE公式アカウントとの連携設定は問題ありません</div>
-                  <div style={{ color: "green" }}>✔ 必要な認証情報は正しく登録されています</div>
-                  <div style={{ color: "red" }}>✖ 自動応答がOFFになっています（ONに設定してください）</div>
+                  <div style={{ color: "green" }}>✔ LINEとの接続は正常である</div>
+                  <div style={{ color: "green" }}>✔ LINE公式アカウントとの連携設定は問題ない</div>
+                  <div style={{ color: "green" }}>✔ 必要な認証情報は正しく登録されている</div>
+                  <div style={{ color: "red" }}>✖ 自動応答がOFFである（ONに設定する必要がある）</div>
                 </div>
               </div>
 
@@ -146,11 +146,11 @@ export default function Proposal1() {
   ↓
 診断画面が開く
   ↓
-ユーザーが診断ボタンを選択
+ユーザーが診断ボタンを選択する
   ↓
-診断処理を実行
+診断処理を実行する
   ↓
-診断結果を画面に表示
+診断結果を画面に表示する
 `}
         </pre>
       </section>
@@ -176,7 +176,7 @@ export default function Proposal1() {
               <td style={{ padding: "10px" }}>PHP / JavaScript / HTML / CSS / jQuery</td>
               <td style={{ padding: "10px" }}>5〜7人日</td>
               <td style={{ padding: "10px" }}>
-                LINE連携・Webhook・Messaging API・内部設定の4領域を横断して調査する必要があるため。
+                LINE連携・Webhook・Messaging API・内部設定の4領域を横断して調査する必要があるためである。
               </td>
             </tr>
             <tr style={{ backgroundColor: "#F1F8E9" }}>
@@ -185,7 +185,7 @@ export default function Proposal1() {
               <td style={{ padding: "10px" }}>PHP / JSON処理 / API通信（HTTP）</td>
               <td style={{ padding: "10px" }}>6〜8人日</td>
               <td style={{ padding: "10px" }}>
-                API応答判定・内部設定チェック・エラー分類ロジックを各診断項目ごとに実装するため。
+                API応答判定・内部設定チェック・エラー分類ロジックを各診断項目ごとに実装する必要があるためである。
               </td>
             </tr>
             <tr style={{ backgroundColor: "#E8F5E9" }}>
@@ -194,7 +194,7 @@ export default function Proposal1() {
               <td style={{ padding: "10px" }}>HTML / CSS / JavaScript / jQuery / Bootstrap / LME-UI</td>
               <td style={{ padding: "10px" }}>1〜2人日</td>
               <td style={{ padding: "10px" }}>
-                診断ボタン・結果表示エリア・警告表示など新規UIコンポーネントを追加するため。
+                診断ボタン・結果表示エリア・警告表示など新規UIコンポーネントを追加する必要があるためである。
               </td>
             </tr>
             <tr style={{ backgroundColor: "#F1F8E9" }}>
@@ -203,17 +203,16 @@ export default function Proposal1() {
               <td style={{ padding: "10px" }}>PHP / API応答検証 / UIテスト</td>
               <td style={{ padding: "10px" }}>2〜3人日</td>
               <td style={{ padding: "10px" }}>
-                正常系・異常系・設定不一致・API遅延など複数パターンの検証が必要なため。
+                正常系・異常系・設定不一致・API遅延など複数パターンの検証が必要であるためである。
               </td>
             </tr>
 
-            {/* 合計行（修正済み） */}
             <tr style={{ backgroundColor: "#C8E6C9", fontWeight: "bold" }}>
               <td style={{ padding: "10px" }}>合計</td>
               <td style={{ padding: "10px" }}>ー</td>
               <td style={{ padding: "10px" }}>ー</td>
               <td style={{ padding: "10px" }}>14〜20人日</td>
-              <td style={{ padding: "10px" }}>エルメの作業未経験者を想定したリスクを加味</td>
+              <td style={{ padding: "10px" }}>エルメの作業未経験者を想定したリスクを加味する。</td>
             </tr>
           </tbody>
         </table>
@@ -223,18 +222,22 @@ export default function Proposal1() {
       {/* 6〜9（既存のまま） */}
       <section style={{ marginBottom: "60px" }}>
         <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>6. 実現可能性</h2>
-        <p>既存APIと内部設定情報を利用するため、技術的に実現可能です。</p>
+        <p>
+          既存APIと内部設定情報を利用するため、技術的に実現可能である。
+        </p>
       </section>
 
       <section style={{ marginBottom: "60px" }}>
         <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>7. 既存機能との整合性</h2>
-        <p>初期設定ウィザードの弱点を補完する機能であり、整合性が高いです。</p>
+        <p>
+          初期設定ウィザードの弱点を補完する機能であり、既存機能との整合性は高い。
+        </p>
       </section>
 
       <section style={{ marginBottom: "60px" }}>
         <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>8. 優先順位</h2>
         <p>
-          初期設定ミスの可視化により、ユーザーの自己解決率が向上し、問い合わせ削減につながる可能性があります。
+          初期設定ミスの可視化により、ユーザーの自己解決率が向上し、問い合わせ削減につながる可能性がある。
         </p>
       </section>
 
