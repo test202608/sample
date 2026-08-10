@@ -28,7 +28,7 @@ export default function Home() {
           </li>
           <li>
             <strong>改善案②（運用の安全保証）</strong><br />
-            配信前に誤配信リスクを事前に把握できるため、運用の安全性に直結するため。
+            配信前に誤配信リスクを事前に把握でき、運用の安全性に直結するため。
           </li>
           <li>
             <strong>改善案③（運用効率の向上）</strong><br />
