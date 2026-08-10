@@ -69,7 +69,7 @@ export default function Proposal3() {
               flexGrow: 1,
               background: "#ffffff",
               borderRadius: "8px",
-              border: "1px solid #ddd",
+              border: "1px solid "#ddd",
               padding: "25px"
             }}>
               <h3 style={{ fontSize: "18px", marginBottom: "20px" }}>
@@ -85,59 +85,67 @@ export default function Proposal3() {
                 marginBottom: "25px"
               }}>
                 <h4 style={{ fontSize: "16px", marginBottom: "15px" }}>ステップ一覧</h4>
+
                 <div style={{ display: "flex", gap: "10px" }}>
-                  <div style={{
+                  <button style={{
                     background: "#fff",
                     border: "1px solid #ddd",
                     borderRadius: "6px",
                     padding: "15px",
                     width: "30%",
+                    textAlign: "left",
                     cursor: "pointer"
                   }}>
                     <strong>ステップ1</strong>
                     <div style={{ fontSize: "12px", color: "#666" }}>メッセージ送信</div>
-                  </div>
-                  <div style={{
+                  </button>
+
+                  <button style={{
                     background: "#fff",
-                    border: "1px solid #ddd",
+                    border: "1px solid "#ddd",
                     borderRadius: "6px",
                     padding: "15px",
                     width: "30%",
+                    textAlign: "left",
                     cursor: "pointer"
                   }}>
                     <strong>ステップ2</strong>
                     <div style={{ fontSize: "12px", color: "#666" }}>案内メッセージ</div>
-                  </div>
-                  <div style={{
+                  </button>
+
+                  <button style={{
                     background: "#fff",
-                    border: "1px solid #ddd",
+                    border: "1px solid "#ddd",
                     borderRadius: "6px",
                     padding: "15px",
                     width: "30%",
+                    textAlign: "left",
                     cursor: "pointer"
                   }}>
                     <strong>ステップ3</strong>
                     <div style={{ fontSize: "12px", color: "#666" }}>別ルート案内</div>
-                  </div>
+                  </button>
                 </div>
               </div>
 
               {/* タグ付与設定 */}
               <div style={{
                 background: "#f9fafc",
-                border: "1px solid #ccc",
+                border: "1px solid "#ccc",
                 borderRadius: "8px",
                 padding: "20px",
                 marginBottom: "25px"
               }}>
                 <h4 style={{ fontSize: "16px", marginBottom: "15px" }}>タグ付与設定</h4>
+
                 <label style={{ display: "block", marginBottom: "10px" }}>
                   このステップ完了時に付与するタグ：
                 </label>
+
                 <select style={{
                   padding: "10px",
                   borderRadius: "6px",
-                  border: "1px solid #ccc",
+                  border: "1px solid "#ccc",
                   width: "50%"
                 }}>
                   <option>タグA（購入前）</option>
@@ -148,15 +156,17 @@ export default function Proposal3() {
               {/* 条件分岐設定 */}
               <div style={{
                 background: "#f9fafc",
-                border: "1px solid #ccc",
+                border: "1px solid "#ccc",
                 borderRadius: "8px",
                 padding: "20px",
                 marginBottom: "25px"
               }}>
                 <h4 style={{ fontSize: "16px", marginBottom: "15px" }}>条件分岐設定</h4>
+
                 <div style={{ marginBottom: "10px" }}>
                   条件：タグAが付いている？
                 </div>
+
                 <div style={{ display: "flex", gap: "10px" }}>
                   <button style={{
                     padding: "10px 15px",
@@ -168,6 +178,7 @@ export default function Proposal3() {
                   }}>
                     YES → ステップ2へ進む
                   </button>
+
                   <button style={{
                     padding: "10px 15px",
                     background: "#4a90e2",
@@ -184,12 +195,13 @@ export default function Proposal3() {
               {/* フローチャート表示 */}
               <div style={{
                 background: "#f9fafc",
-                border: "1px solid #ccc",
+                border: "1px solid "#ccc",
                 borderRadius: "8px",
                 padding: "20px",
                 marginBottom: "25px"
               }}>
                 <h4 style={{ fontSize: "16px", marginBottom: "15px" }}>フローチャート表示</h4>
+
                 <div style={{
                   background: "#fff",
                   padding: "15px",
@@ -207,11 +219,12 @@ export default function Proposal3() {
               {/* シミュレーション機能 */}
               <div style={{
                 background: "#f9fafc",
-                border: "1px solid #ccc",
+                border: "1px solid "#ccc",
                 borderRadius: "8px",
                 padding: "20px"
               }}>
                 <h4 style={{ fontSize: "16px", marginBottom: "15px" }}>シミュレーション機能</h4>
+
                 <button style={{
                   padding: "12px 20px",
                   background: "#4a90e2",
@@ -223,6 +236,7 @@ export default function Proposal3() {
                 }}>
                   このユーザーでシミュレーション
                 </button>
+
                 <div style={{ lineHeight: "2" }}>
                   <div style={{ color: "green" }}>✔ タグAが付与されます</div>
                   <div style={{ color: "green" }}>✔ 条件分岐の結果：ステップ2へ進みます</div>
@@ -241,7 +255,7 @@ export default function Proposal3() {
           background: "#f7f7f7",
           padding: "20px",
           borderRadius: "8px",
-          border: "1px solid "#ddd",
+          border: "1px solid #ddd",
           fontSize: "14px"
         }}>
 {`ステップ配信（改善）をクリック
@@ -313,7 +327,6 @@ export default function Proposal3() {
               </td>
             </tr>
 
-            {/* 合計行 */}
             <tr style={{ backgroundColor: "#C8E6C9", fontWeight: "bold" }}>
               <td style={{ padding: "10px" }}>合計</td>
               <td style={{ padding: "10px" }}>ー</td>
