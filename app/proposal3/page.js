@@ -69,7 +69,7 @@ export default function Proposal3() {
               flexGrow: 1,
               background: "#ffffff",
               borderRadius: "8px",
-              border: "1px solid "#ddd",
+              border: "1px solid #ddd",
               padding: "25px"
             }}>
               <h3 style={{ fontSize: "18px", marginBottom: "20px" }}>
@@ -102,7 +102,7 @@ export default function Proposal3() {
 
                   <button style={{
                     background: "#fff",
-                    border: "1px solid "#ddd",
+                    border: "1px solid #ddd",
                     borderRadius: "6px",
                     padding: "15px",
                     width: "30%",
@@ -115,7 +115,7 @@ export default function Proposal3() {
 
                   <button style={{
                     background: "#fff",
-                    border: "1px solid "#ddd",
+                    border: "1px solid #ddd",
                     borderRadius: "6px",
                     padding: "15px",
                     width: "30%",
@@ -131,7 +131,7 @@ export default function Proposal3() {
               {/* タグ付与設定 */}
               <div style={{
                 background: "#f9fafc",
-                border: "1px solid "#ccc",
+                border: "1px solid #ccc",
                 borderRadius: "8px",
                 padding: "20px",
                 marginBottom: "25px"
@@ -145,7 +145,7 @@ export default function Proposal3() {
                 <select style={{
                   padding: "10px",
                   borderRadius: "6px",
-                  border: "1px solid "#ccc",
+                  border: "1px solid #ccc",
                   width: "50%"
                 }}>
                   <option>タグA（購入前）</option>
@@ -156,7 +156,7 @@ export default function Proposal3() {
               {/* 条件分岐設定 */}
               <div style={{
                 background: "#f9fafc",
-                border: "1px solid "#ccc",
+                border: "1px solid #ccc",
                 borderRadius: "8px",
                 padding: "20px",
                 marginBottom: "25px"
@@ -195,7 +195,7 @@ export default function Proposal3() {
               {/* フローチャート表示 */}
               <div style={{
                 background: "#f9fafc",
-                border: "1px solid "#ccc",
+                border: "1px solid #ccc",
                 borderRadius: "8px",
                 padding: "20px",
                 marginBottom: "25px"
@@ -219,7 +219,7 @@ export default function Proposal3() {
               {/* シミュレーション機能 */}
               <div style={{
                 background: "#f9fafc",
-                border: "1px solid "#ccc",
+                border: "1px solid #ccc",
                 borderRadius: "8px",
                 padding: "20px"
               }}>
@@ -255,7 +255,7 @@ export default function Proposal3() {
           background: "#f7f7f7",
           padding: "20px",
           borderRadius: "8px",
-          border: "1px solid #ddd",
+          border: "1px solid "#ddd",
           fontSize: "14px"
         }}>
 {`ステップ配信（改善）をクリック
