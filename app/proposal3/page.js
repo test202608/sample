@@ -26,12 +26,12 @@ export default function Proposal3() {
       <section style={{ marginBottom: "60px" }}>
         <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>2. 改善内容</h2>
         <p>
-          ステップ配信の流れをフローチャート形式で可視化し、
-          条件分岐の評価順序を明示し、誤設定を防止するためのシミュレーション機能を追加します。
+          ステップ配信の流れを画面上で可視化し、タグ付与・条件分岐の関係性を直感的に理解できるUIを提供します。
+          また、誤設定を防止するためのシミュレーション機能を追加します。
         </p>
       </section>
 
-      {/* 3. 図解（UIモックのみ） */}
+      {/* 3. 図解（UIモック） */}
       <section style={{ marginBottom: "60px" }}>
         <h2 style={{ fontSize: "22px", marginBottom: "20px" }}>3. 図解</h2>
 
@@ -76,7 +76,7 @@ export default function Proposal3() {
                 ステップ配信（UIイメージ）
               </h3>
 
-              {/* フローチャート表示（UIとしての図解） */}
+              {/* ステップ一覧 */}
               <div style={{
                 background: "#f9fafc",
                 border: "1px solid #ccc",
@@ -84,8 +84,102 @@ export default function Proposal3() {
                 padding: "20px",
                 marginBottom: "25px"
               }}>
-                <h4 style={{ fontSize: "16px", marginBottom: "15px" }}>ステップ配信フローチャート（UI表示）</h4>
+                <h4 style={{ fontSize: "16px", marginBottom: "15px" }}>ステップ一覧</h4>
+                <div style={{ display: "flex", gap: "10px" }}>
+                  <div style={{
+                    background: "#fff",
+                    border: "1px solid #ddd",
+                    borderRadius: "6px",
+                    padding: "15px",
+                    width: "30%"
+                  }}>
+                    ステップ1  
+                    <div style={{ fontSize: "12px", color: "#666" }}>メッセージ送信</div>
+                  </div>
+                  <div style={{
+                    background: "#fff",
+                    border: "1px solid #ddd",
+                    borderRadius: "6px",
+                    padding: "15px",
+                    width: "30%"
+                  }}>
+                    ステップ2  
+                    <div style={{ fontSize: "12px", color: "#666" }}>案内メッセージ</div>
+                  </div>
+                  <div style={{
+                    background: "#fff",
+                    border: "1px solid #ddd",
+                    borderRadius: "6px",
+                    padding: "15px",
+                    width: "30%"
+                  }}>
+                    ステップ3  
+                    <div style={{ fontSize: "12px", color: "#666" }}>別ルート案内</div>
+                  </div>
+                </div>
+              </div>
 
+              {/* タグ付与設定 */}
+              <div style={{
+                background: "#f9fafc",
+                border: "1px solid #ccc",
+                borderRadius: "8px",
+                padding: "20px",
+                marginBottom: "25px"
+              }}>
+                <h4 style={{ fontSize: "16px", marginBottom: "15px" }}>タグ付与設定</h4>
+                <select style={{
+                  padding: "10px",
+                  borderRadius: "6px",
+                  border: "1px solid #ccc"
+                }}>
+                  <option>タグA（購入前）</option>
+                  <option>タグB（購入後）</option>
+                </select>
+              </div>
+
+              {/* 条件分岐設定 */}
+              <div style={{
+                background: "#f9fafc",
+                border: "1px solid #ccc",
+                borderRadius: "8px",
+                padding: "20px",
+                marginBottom: "25px"
+              }}>
+                <h4 style={{ fontSize: "16px", marginBottom: "15px" }}>条件分岐設定</h4>
+                <div style={{ marginBottom: "10px" }}>
+                  条件：タグAが付いている？
+                </div>
+                <div style={{ display: "flex", gap: "10px" }}>
+                  <button style={{
+                    padding: "10px 15px",
+                    background: "#4a90e2",
+                    color: "#fff",
+                    border: "none",
+                    borderRadius: "6px",
+                    cursor: "pointer"
+                  }}>YES → ステップ2</button>
+
+                  <button style={{
+                    padding: "10px 15px",
+                    background: "#4a90e2",
+                    color: "#fff",
+                    border: "none",
+                    borderRadius: "6px",
+                    cursor: "pointer"
+                  }}>NO → ステップ3</button>
+                </div>
+              </div>
+
+              {/* フローチャート表示領域（UIとして成立） */}
+              <div style={{
+                background: "#f9fafc",
+                border: "1px solid #ccc",
+                borderRadius: "8px",
+                padding: "20px",
+                marginBottom: "25px"
+              }}>
+                <h4 style={{ fontSize: "16px", marginBottom: "15px" }}>フローチャート表示</h4>
                 <div style={{
                   background: "#fff",
                   padding: "15px",
@@ -94,11 +188,13 @@ export default function Proposal3() {
                   fontSize: "14px",
                   lineHeight: "1.8"
                 }}>
-                  <div>ステップ1 → タグ付与 → 条件分岐 → ステップ2 / ステップ3</div>
+                  <div>ステップ1 → タグ付与（タグA）</div>
+                  <div>タグAが付いている？ → YES → ステップ2</div>
+                  <div>タグAが付いている？ → NO → ステップ3</div>
                 </div>
               </div>
 
-              {/* シミュレーション機能（UIとしての図解） */}
+              {/* シミュレーション機能 */}
               <div style={{
                 background: "#f9fafc",
                 border: "1px solid #ccc",
@@ -119,6 +215,7 @@ export default function Proposal3() {
                 </button>
 
                 <div style={{ lineHeight: "2" }}>
+                  <div style={{ color: "green" }}>✔ タグAが付与されます</div>
                   <div style={{ color: "green" }}>✔ 条件分岐の結果：ステップ2へ進みます</div>
                 </div>
               </div>
@@ -128,7 +225,7 @@ export default function Proposal3() {
         </div>
       </section>
 
-      {/* 4. フローチャート（処理流れ） */}
+      {/* 4. フローチャート */}
       <section style={{ marginBottom: "60px" }}>
         <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>4. フローチャート</h2>
         <pre style={{
@@ -140,9 +237,9 @@ export default function Proposal3() {
         }}>
 {`ステップ配信（改善）をクリック
   ↓
-フローチャート画面が開く
+ステップ一覧・タグ付与・条件分岐が表示される
   ↓
-タグ付与・条件分岐の流れを確認
+フローチャートで流れを確認
   ↓
 必要に応じてシミュレーションを実行
   ↓
@@ -151,7 +248,7 @@ export default function Proposal3() {
         </pre>
       </section>
 
-      {/* 5. 工数（項番＋合計行） */}
+      {/* 5. 工数 */}
       <section style={{ marginBottom: "60px" }}>
         <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>5. 工数</h2>
 
@@ -220,7 +317,7 @@ export default function Proposal3() {
         </table>
       </section>
 
-      {/* 6〜9（既存のまま構造維持） */}
+      {/* 6〜9 */}
       <section style={{ marginBottom: "60px" }}>
         <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>6. 実現可能性</h2>
         <p>
