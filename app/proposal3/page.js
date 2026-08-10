@@ -135,7 +135,7 @@ export default function Proposal3() {
         </pre>
       </section>
 
-      {/* 5. 工数（項番を数字に変更＋合計行追加） */}
+      {/* 5. 工数（合計行の文言修正済み） */}
       <section style={{ marginBottom: "60px" }}>
         <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>5. 工数</h2>
 
@@ -187,21 +187,17 @@ export default function Proposal3() {
               </td>
             </tr>
 
-            {/* 合計行 */}
+            {/* 合計行（修正済み） */}
             <tr style={{ backgroundColor: "#C8E6C9", fontWeight: "bold" }}>
               <td style={{ padding: "10px" }}>合計</td>
               <td style={{ padding: "10px" }}>ー</td>
               <td style={{ padding: "10px" }}>ー</td>
               <td style={{ padding: "10px" }}>9〜14人日</td>
-              <td style={{ padding: "10px" }}>リスク工数込み</td>
+              <td style={{ padding: "10px" }}>エルメの作業未経験者を想定したリスクを加味</td>
             </tr>
           </tbody>
         </table>
 
-        {/* 注意文 */}
-        <p style={{ marginTop: "10px", fontSize: "14px", color: "#555" }}>
-          上記は、エルメの作業未経験者を想定したリスク込みの工数です。
-        </p>
       </section>
 
       {/* 6〜9（既存のまま） */}
